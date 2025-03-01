@@ -8,7 +8,8 @@ from .views import main, register, user_login, contests, logout_view, contests_v
 from django.contrib.auth import views as auth_views
 
 from .quiz_logic_service.quiz_logic import edit_quiz_problem, quiz_view, quiz_field_view, quiz_buy_problem, quiz_results, quiz_participants_admin, \
-    quiz_realtime_log, api_get_quiz_last_attempts, quiz_edit_user_profile, api_get_quiz_current_results, quiz_realtime_results, quiz_edit_user_attempts
+    quiz_realtime_log, api_get_quiz_last_attempts, quiz_edit_user_profile, api_get_quiz_current_results, quiz_realtime_results, quiz_edit_user_attempts, \
+    quiz_field_editor
 
 from .image_processing_service.image_logic import upload_image, image_list
 
@@ -38,6 +39,7 @@ urlpatterns = [
     path('contests/', contests_view, name='contests'),
     path('quizzes/', quiz_view, name='quizzes'),
     path('quiz_field/<int:contest_id>/', quiz_field_view, name='quiz_field'),
+    path('quiz_field/edit/<int:quiz_field_id>/', quiz_field_editor, name='quiz_field_editor'),
     path('edit_quiz_problem/<int:quiz_problem_id>/', edit_quiz_problem, name='edit_quiz_problem'),
     path('buy_quiz_problem/<int:quiz_problem_id>/', quiz_buy_problem, name='quiz_buy_problem'),
     path('quiz_results/<int:contest_id>/', quiz_results, name='quiz_results'),
@@ -70,4 +72,3 @@ urlpatterns = [
 # Для разработки, чтобы сервер мог обслуживать медиа файлы
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-

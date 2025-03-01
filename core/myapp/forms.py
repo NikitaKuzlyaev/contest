@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from django import forms
 from .models import Contest
 from .models import Profile
+from .models import QuizField
 from .models import ContestPage
 from .models import ContestCheckerPythonCode
 from .models import ContestThresholdSubmission
@@ -63,6 +64,11 @@ class AppConfigForm(forms.ModelForm):
         model = AppConfig
         fields = ['allow_registration', 'enable_feature_x']
 
+
+class QuizFieldForm(forms.ModelForm):
+    class Meta:
+        model = QuizField
+        fields = ['width', 'height']
 
 class QuizProblemForm(forms.ModelForm):
     # class Meta:

@@ -24,10 +24,11 @@ SECRET_KEY = 'django-insecure-s(yk+soschnhjdf*z3p*qqib+!r$z2&_o%elg#m&b(0ro-#s(m
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+#DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-SESSION_COOKIE_AGE = 3600  # Время жизни сессии (в секундах)
+# SESSION_COOKIE_AGE = 3600  # Время жизни сессии (в секундах)
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False  # Закрытие сессии при закрытии браузера
 
 # Application definition
@@ -82,33 +83,33 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'webdb',  # Название базы данных
-        'USER': 'postgres',
-        'PASSWORD': '2476',
-        'HOST': 'localhost',  # Локальный хост для базы данных
-        'PORT': '5432',
-        'OPTIONS': {
-            'client_encoding': 'UTF8',  # Указываем кодировку для клиента
-        },
-    }
-}
-
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'webdb',
+#         'NAME': 'webdb',  # Название базы данных
 #         'USER': 'postgres',
 #         'PASSWORD': '2476',
-#         'HOST': 'db',  # имя контейнера PostgreSQL
+#         'HOST': 'localhost',  # Локальный хост для базы данных
 #         'PORT': '5432',
 #         'OPTIONS': {
-#             'client_encoding': 'UTF8',
+#             'client_encoding': 'UTF8',  # Указываем кодировку для клиента
 #         },
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'webdb',
+        'USER': 'postgres',
+        'PASSWORD': '2476',
+        'HOST': 'db',  # имя контейнера PostgreSQL
+        'PORT': '5432',
+        'OPTIONS': {
+            'client_encoding': 'UTF8',
+        },
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
