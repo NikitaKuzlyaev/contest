@@ -53,6 +53,14 @@
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
     </script>
 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
+
+        html, body {
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+    </style>
+
 
     <style>
         a.disabled {
@@ -68,13 +76,13 @@
             transition: transform 0.2s ease-in-out; /* Установите свою скорость */
         }
         .card {
-          border: 1px solid #ccc;
-          width: 100%;
-          border-radius: 5px;
-          background-color: #f9f9f9;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-          font-size: 0.8rem;
-          color: #6c757d;
+              border: 1px solid #ccc;
+              width: 100%;
+              border-radius: 5px;
+              background-color: #f9f9f9;
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+              font-size: 0.8rem;
+              color: #6c757d;
         }
 
         .card-title {
@@ -101,7 +109,6 @@
             color: #000;
         }
 
-
         .card-title-page {
             margin-top: 2px;
             padding-left: 5px;
@@ -109,6 +116,9 @@
             font-weight: regular;
         }
 
+        .tab-pane{
+            font-size: 0.9rem;
+        }
 
     </style>
 
@@ -249,7 +259,7 @@
             {% for page in contest_pages %}
             <div class="tab-pane border rounded shadow-sm p-4 mb-3" id="tab-{{ page.id }}" style="display: none; background-color: #f9f9f9;">
                 <!-- Заголовок вкладки -->
-                <h4 class="mb-3 font-weight-bold text-primary">{{ page.title }}</h4>
+                <h4 class="mb-3 font-weight-bold text-primary" style="font-size:1.4rem; font-weight:bold;">{{ page.title }}</h4>
 
                 <!--                &lt;!&ndash; Содержимое вкладки &ndash;&gt;-->
                 <!--                <div class="form-control-plaintext" style="white-space: pre-wrap; font-size: 1rem; color: #333;">-->

@@ -26,6 +26,14 @@
     <!-- Подключение Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
+
+        html, body {
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+    </style>
+
 </head>
 <body>
 <div class="container mt-4">
@@ -55,11 +63,7 @@
     {
         background-color: #FFF5EE;
         color: black;
-        font-family: 'Courier New', sans-serif; /* Использует Arial, если нет - sans-serif */
     }
-
-
-
 
     .gold-card {
         position: relative; /* Чтобы `::before` позиционировался относительно карточки */
@@ -71,31 +75,15 @@
         overflow: hidden; /* Обрезает градиент, если он выходит за границы */
     }
 
-<!--    .gold-card::before {-->
-<!--        content: "";-->
-<!--        position: absolute;-->
-<!--        top: 0;-->
-<!--        left: 0;-->
-<!--        width: 100%;-->
-<!--        height: 20%; /* Высота градиента */-->
-<!--        background: linear-gradient(to bottom, rgba(255, 215, 30, 0.8), rgba(255, 215, 0, 0));-->
-<!--        border-top-left-radius: 5px; /* Подгоняем к закруглениям */-->
-<!--        border-top-right-radius: 5px;-->
-<!--        pointer-events: none; /* Чтобы градиент не перекрывал клики */-->
-<!--    }-->
-
     .gold-card-body {
         padding-top: 20px;
         padding-bottom: 20px;
     }
     .gold-card-title {
         padding-left: 30px;
-        font-family: 'Courier New', sans-serif; /* Использует Arial, если нет - sans-serif */
         font-size: 1.6rem;
         font-weight: bold;
     }
-
-
 
     .silver-card {
         position: relative; /* Чтобы `::before` позиционировался относительно карточки */
@@ -107,30 +95,15 @@
         overflow: hidden; /* Обрезает градиент, если он выходит за границы */
     }
 
-<!--    .silver-card::before {-->
-<!--        content: "";-->
-<!--        position: absolute;-->
-<!--        top: 0;-->
-<!--        left: 0;-->
-<!--        width: 100%;-->
-<!--        height: 20%; /* Высота градиента */-->
-<!--        background: linear-gradient(to bottom, rgba(192, 192, 192, 0.8), rgba(192, 192, 192, 0));-->
-<!--        border-top-left-radius: 5px; /* Подгоняем к закруглениям */-->
-<!--        border-top-right-radius: 5px;-->
-<!--        pointer-events: none; /* Чтобы градиент не перекрывал клики */-->
-<!--    }-->
-
     .silver-card-body {
         padding-top: 15px;
         padding-bottom: 15px;
     }
     .silver-card-title {
         padding-left: 30px;
-        font-family: 'Courier New', sans-serif; /* Использует Arial, если нет - sans-serif */
         font-size: 1.6rem;
         font-weight: bold;
     }
-
 
     .bronze-card {
         position: relative; /* Чтобы `::before` позиционировался относительно карточки */
@@ -142,25 +115,13 @@
         overflow: hidden; /* Обрезает градиент, если он выходит за границы */
     }
 
-<!--    .bronze-card::before {-->
-<!--        content: "";-->
-<!--        position: absolute;-->
-<!--        top: 0;-->
-<!--        left: 0;-->
-<!--        width: 100%;-->
-<!--        height: 20%; /* Высота градиента */-->
-<!--        background: linear-gradient(to bottom, rgba(255, 228, 181, 0.8), rgba(255, 228, 181 , 0));-->
-<!--        border-top-left-radius: 5px; /* Подгоняем к закруглениям */-->
-<!--        border-top-right-radius: 5px;-->
-<!--        pointer-events: none; /* Чтобы градиент не перекрывал клики */-->
-<!--    }-->
     .bronze-card-body {
         padding-top: 10px;
         padding-bottom: 10px;
     }
+
     .bronze-card-title {
         padding-left: 30px;
-        font-family: 'Courier New', sans-serif; /* Использует Arial, если нет - sans-serif */
         font-size: 1.6rem;
         font-weight: bold;
     }
@@ -172,13 +133,14 @@
         transition: transform 0.05s;
         background-color: #f0f8ff;
     }
+
     .default-card-body {
         padding-top: 10px;
         padding-bottom: 10px;
     }
+
     .default-card-title {
         padding-left: 30px;
-        font-family: 'Courier New', sans-serif; /* Использует Arial, если нет - sans-serif */
         font-size: 1.5rem;
         font-weight: bold;
     }

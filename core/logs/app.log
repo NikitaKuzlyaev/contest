@@ -29447,3 +29447,1775 @@ INFO 2025-02-10 11:29:38,570 basehttp "GET /quizzes/ HTTP/1.1" 200 15575
 INFO 2025-02-10 11:29:39,426 basehttp "GET /contests/admin/19/ HTTP/1.1" 200 26896
 INFO 2025-02-10 11:29:40,535 basehttp "GET /quizzes/ HTTP/1.1" 200 15575
 INFO 2025-02-10 11:29:42,113 basehttp "GET /quizzes/ HTTP/1.1" 200 15575
+INFO 2025-02-10 11:30:38,185 basehttp "GET /quizzes/ HTTP/1.1" 200 15575
+INFO 2025-02-10 11:30:39,282 basehttp "GET /contests/admin/21/ HTTP/1.1" 200 19758
+INFO 2025-02-10 11:30:41,927 basehttp "GET /contests/admin/21/ HTTP/1.1" 200 19758
+INFO 2025-02-10 11:30:42,525 basehttp "GET /contests/admin/21/ HTTP/1.1" 200 19758
+INFO 2025-02-10 11:30:43,249 basehttp "GET /contests/admin/21/ HTTP/1.1" 200 19758
+ERROR 2025-02-10 11:30:51,304 log Internal Server Error: /contests/admin/21/
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'quiz==False'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\views.py", line 387, in contest_detail_view_admin
+    return render(request, 'contest_templates/contest_detail_admin.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '==False' from 'quiz==False'
+ERROR 2025-02-10 11:30:51,379 basehttp "GET /contests/admin/21/ HTTP/1.1" 500 272246
+ERROR 2025-02-10 11:31:19,819 log Internal Server Error: /contests/admin/21/
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: '!quiz'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\views.py", line 387, in contest_detail_view_admin
+    return render(request, 'contest_templates/contest_detail_admin.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '!quiz' from '!quiz'
+ERROR 2025-02-10 11:31:19,821 basehttp "GET /contests/admin/21/ HTTP/1.1" 500 271372
+ERROR 2025-02-10 11:31:20,686 log Internal Server Error: /contests/admin/21/
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: '!quiz'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\views.py", line 387, in contest_detail_view_admin
+    return render(request, 'contest_templates/contest_detail_admin.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '!quiz' from '!quiz'
+ERROR 2025-02-10 11:31:20,689 basehttp "GET /contests/admin/21/ HTTP/1.1" 500 271372
+INFO 2025-02-10 11:31:24,857 basehttp "GET /contests/admin/21/ HTTP/1.1" 200 19758
+INFO 2025-02-10 11:32:00,446 basehttp "GET /contests/admin/21/ HTTP/1.1" 200 19025
+INFO 2025-02-10 11:32:20,809 basehttp "GET /contests/admin/21/ HTTP/1.1" 200 19025
+INFO 2025-02-10 11:32:25,375 basehttp "GET /contests/ HTTP/1.1" 200 17170
+INFO 2025-02-10 11:32:26,417 basehttp "GET /contests/admin/9/ HTTP/1.1" 200 22566
+INFO 2025-02-10 11:32:28,845 basehttp "GET /quizzes/ HTTP/1.1" 200 15575
+INFO 2025-02-10 11:32:30,245 basehttp "GET /contests/admin/21/ HTTP/1.1" 200 19025
+INFO 2025-02-10 11:32:32,631 basehttp "GET /contests/admin/21/ HTTP/1.1" 200 19025
+INFO 2025-02-10 11:32:38,641 basehttp "GET /quizzes/ HTTP/1.1" 200 15575
+INFO 2025-02-10 11:32:40,380 basehttp "GET /blank_page/ HTTP/1.1" 200 6545
+INFO 2025-02-10 11:32:40,900 basehttp "GET / HTTP/1.1" 200 24543
+INFO 2025-02-10 11:32:42,959 basehttp "GET /blank_page/ HTTP/1.1" 200 6545
+INFO 2025-02-10 11:32:43,953 basehttp "GET /quizzes/ HTTP/1.1" 200 15575
+INFO 2025-02-10 11:32:45,988 basehttp "GET /admin_panel/ HTTP/1.1" 200 7680
+INFO 2025-02-10 11:32:47,392 basehttp "GET /blank_page/ HTTP/1.1" 200 6545
+INFO 2025-02-10 11:32:48,126 basehttp "GET /blank_page/ HTTP/1.1" 200 6545
+INFO 2025-02-10 11:32:56,081 basehttp "GET /quizzes/ HTTP/1.1" 200 15575
+INFO 2025-02-10 11:32:57,369 basehttp "GET /contests/21/ HTTP/1.1" 200 18435
+INFO 2025-02-10 11:32:59,474 basehttp "GET /quiz_field/21/ HTTP/1.1" 200 45823
+INFO 2025-02-10 11:33:03,552 basehttp "GET /contests/19/ HTTP/1.1" 200 37247
+INFO 2025-02-10 11:33:03,581 basehttp "GET /media/uploads/de32f106-4654-409b-8b61-41a53107ca8f.png HTTP/1.1" 304 0
+INFO 2025-02-10 11:33:03,581 basehttp "GET /media/uploads/7b0716e9-b692-4514-897f-b0cb9f8a922b.gif HTTP/1.1" 304 0
+INFO 2025-02-10 11:33:05,496 basehttp "GET /contests/18/ HTTP/1.1" 200 18700
+INFO 2025-02-10 11:33:07,121 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 41932
+INFO 2025-02-10 11:33:09,934 basehttp "GET /buy_quiz_problem/57/ HTTP/1.1" 200 46094
+INFO 2025-02-10 11:33:11,965 basehttp "GET /buy_quiz_problem/61/ HTTP/1.1" 200 49185
+INFO 2025-02-10 11:47:00,929 basehttp "GET /buy_quiz_problem/61/ HTTP/1.1" 200 49282
+INFO 2025-02-10 11:47:04,053 basehttp "GET /buy_quiz_problem/61/ HTTP/1.1" 200 49282
+INFO 2025-02-10 11:47:12,514 basehttp "GET /buy_quiz_problem/61/ HTTP/1.1" 200 49282
+INFO 2025-02-10 11:47:19,292 basehttp "GET /buy_quiz_problem/62/ HTTP/1.1" 200 52037
+INFO 2025-02-10 11:47:24,648 basehttp "POST /buy_quiz_problem/62/ HTTP/1.1" 302 0
+INFO 2025-02-10 11:47:25,425 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 50760
+INFO 2025-02-10 11:47:33,408 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 47893
+INFO 2025-02-10 11:47:34,731 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 47893
+INFO 2025-02-10 11:47:35,818 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 47893
+INFO 2025-02-10 11:47:36,949 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 47893
+INFO 2025-02-10 11:47:38,062 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 47893
+INFO 2025-02-10 11:53:58,710 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 47796
+INFO 2025-02-10 11:54:00,006 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 47796
+INFO 2025-02-10 11:54:02,459 basehttp "GET /buy_quiz_problem/51/ HTTP/1.1" 200 51448
+INFO 2025-02-10 11:54:17,556 basehttp "POST /buy_quiz_problem/51/ HTTP/1.1" 302 0
+INFO 2025-02-10 11:54:18,378 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 50759
+INFO 2025-02-10 11:54:21,128 basehttp "POST /quiz_field/18/ HTTP/1.1" 302 0
+INFO 2025-02-10 11:54:21,838 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 50667
+INFO 2025-02-10 11:55:26,746 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 47488
+INFO 2025-02-10 11:55:28,559 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 47488
+INFO 2025-02-10 11:55:56,130 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 47616
+INFO 2025-02-10 11:55:58,298 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 47616
+INFO 2025-02-10 11:56:12,305 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 47689
+INFO 2025-02-10 11:56:13,985 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 47689
+INFO 2025-02-10 11:56:14,795 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 47689
+INFO 2025-02-10 11:56:43,851 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 46884
+INFO 2025-02-10 11:56:45,398 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 46884
+INFO 2025-02-10 11:56:48,082 basehttp "POST /quiz_field/18/ HTTP/1.1" 302 0
+INFO 2025-02-10 11:56:48,775 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 46652
+INFO 2025-02-10 11:58:06,355 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 43777
+INFO 2025-02-10 11:58:07,618 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 43777
+INFO 2025-02-10 11:58:51,812 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47626
+INFO 2025-02-10 11:59:31,516 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47626
+INFO 2025-02-10 11:59:32,482 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47626
+INFO 2025-02-10 11:59:42,943 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47625
+INFO 2025-02-10 11:59:44,566 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47625
+INFO 2025-02-10 11:59:45,829 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47625
+INFO 2025-02-10 12:03:13,373 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47625
+INFO 2025-02-10 12:04:00,348 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47661
+INFO 2025-02-10 12:04:02,031 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47661
+INFO 2025-02-10 12:04:03,697 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47661
+INFO 2025-02-10 12:04:04,962 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47661
+INFO 2025-02-10 12:04:06,086 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47661
+INFO 2025-02-10 12:04:07,147 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47661
+INFO 2025-02-10 12:04:08,054 basehttp - Broken pipe from ('127.0.0.1', 53915)
+INFO 2025-02-10 12:04:08,707 basehttp - Broken pipe from ('127.0.0.1', 54013)
+INFO 2025-02-10 12:04:09,476 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47661
+INFO 2025-02-10 12:04:10,613 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47661
+INFO 2025-02-10 12:04:11,848 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47661
+INFO 2025-02-10 12:04:17,018 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47661
+INFO 2025-02-10 12:04:18,372 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47661
+INFO 2025-02-10 12:04:19,735 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47661
+INFO 2025-02-10 12:04:21,093 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47661
+INFO 2025-02-10 12:04:22,200 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47661
+INFO 2025-02-10 12:04:23,344 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47661
+INFO 2025-02-10 12:04:24,407 basehttp "GET /buy_quiz_problem/55/ HTTP/1.1" 200 47661
+INFO 2025-02-10 12:07:21,146 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 50270
+INFO 2025-02-10 12:07:44,866 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48806
+INFO 2025-02-10 12:07:55,049 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48806
+INFO 2025-02-10 12:07:56,275 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48806
+INFO 2025-02-10 12:07:57,225 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48806
+INFO 2025-02-10 12:08:11,886 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48804
+INFO 2025-02-10 12:08:13,012 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48804
+INFO 2025-02-10 12:08:14,350 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48804
+INFO 2025-02-10 12:08:19,873 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48805
+INFO 2025-02-10 12:08:21,039 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48805
+INFO 2025-02-10 12:08:33,351 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48771
+INFO 2025-02-10 12:11:24,925 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48771
+INFO 2025-02-10 12:11:26,275 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48771
+INFO 2025-02-10 12:11:27,975 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48771
+INFO 2025-02-10 12:11:28,824 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48771
+INFO 2025-02-10 12:12:53,132 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48771
+INFO 2025-02-10 12:14:19,358 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48782
+INFO 2025-02-10 12:14:26,617 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48782
+INFO 2025-02-10 12:14:41,690 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48783
+INFO 2025-02-10 12:14:49,515 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48783
+INFO 2025-02-10 12:14:57,920 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48783
+INFO 2025-02-10 12:15:05,967 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48783
+INFO 2025-02-10 12:16:56,713 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48952
+INFO 2025-02-10 12:17:26,596 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 48967
+INFO 2025-02-10 12:18:16,915 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 49084
+WARNING 2025-02-10 12:18:16,975 log Not Found: /fonts/IBMPlexSans-Regular.woff2
+WARNING 2025-02-10 12:18:16,976 basehttp "GET /fonts/IBMPlexSans-Regular.woff2 HTTP/1.1" 404 12551
+WARNING 2025-02-10 12:18:17,005 log Not Found: /fonts/IBMPlexSans-Regular.woff
+WARNING 2025-02-10 12:18:17,005 basehttp "GET /fonts/IBMPlexSans-Regular.woff HTTP/1.1" 404 12548
+INFO 2025-02-10 12:19:07,496 basehttp "GET /buy_quiz_problem/67/ HTTP/1.1" 200 49093
+INFO 2025-02-10 12:19:10,702 basehttp "GET /blank_page/ HTTP/1.1" 200 6854
+INFO 2025-02-10 12:19:11,548 basehttp "GET /contests/ HTTP/1.1" 200 17479
+INFO 2025-02-10 12:19:12,031 basehttp "GET / HTTP/1.1" 200 24852
+INFO 2025-02-10 12:19:13,812 basehttp "GET /blank_page/ HTTP/1.1" 200 6854
+INFO 2025-02-10 12:19:14,290 basehttp "GET /quizzes/ HTTP/1.1" 200 15884
+INFO 2025-02-10 12:19:37,403 basehttp "GET /quizzes/ HTTP/1.1" 200 15876
+INFO 2025-02-10 12:19:41,784 basehttp "GET /quizzes/ HTTP/1.1" 200 15586
+INFO 2025-02-10 12:19:43,611 basehttp "GET /quizzes/ HTTP/1.1" 200 15586
+INFO 2025-02-10 12:19:44,211 basehttp "GET /quizzes/ HTTP/1.1" 200 15586
+INFO 2025-02-10 12:19:44,583 basehttp "GET /quizzes/ HTTP/1.1" 200 15586
+INFO 2025-02-10 12:19:48,290 basehttp "GET /quizzes/ HTTP/1.1" 200 15876
+INFO 2025-02-10 12:19:48,930 basehttp "GET /quizzes/ HTTP/1.1" 200 15876
+INFO 2025-02-10 12:19:49,430 basehttp "GET /quizzes/ HTTP/1.1" 200 15876
+INFO 2025-02-10 12:19:49,638 basehttp "GET /quizzes/ HTTP/1.1" 200 15876
+INFO 2025-02-10 12:19:49,935 basehttp "GET /quizzes/ HTTP/1.1" 200 15876
+INFO 2025-02-10 12:19:50,013 basehttp "GET /quizzes/ HTTP/1.1" 200 15876
+INFO 2025-02-10 12:20:36,020 basehttp "GET /quizzes/ HTTP/1.1" 200 11727
+INFO 2025-02-10 12:20:37,475 basehttp "GET /quizzes/ HTTP/1.1" 200 11727
+INFO 2025-02-10 12:20:38,340 basehttp "GET /quizzes/ HTTP/1.1" 200 11727
+INFO 2025-02-10 12:20:38,953 basehttp "GET /login/ HTTP/1.1" 200 7965
+INFO 2025-02-10 12:20:41,425 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-02-10 12:20:41,477 basehttp "GET / HTTP/1.1" 200 24850
+INFO 2025-02-10 12:20:45,017 basehttp "GET /quizzes/ HTTP/1.1" 200 15882
+INFO 2025-02-10 12:20:46,216 basehttp "GET /contests/21/ HTTP/1.1" 200 18742
+INFO 2025-02-10 12:20:47,744 basehttp "GET /quiz_field/21/ HTTP/1.1" 200 45224
+INFO 2025-02-10 12:20:51,345 basehttp "GET /contests/19/ HTTP/1.1" 200 37554
+INFO 2025-02-10 12:20:51,395 basehttp "GET /media/uploads/7b0716e9-b692-4514-897f-b0cb9f8a922b.gif HTTP/1.1" 200 1785399
+INFO 2025-02-10 12:20:52,965 basehttp "GET /quiz_field/19/ HTTP/1.1" 200 44337
+INFO 2025-02-10 12:21:18,878 basehttp "GET /quiz_field/19/ HTTP/1.1" 200 44423
+INFO 2025-02-10 12:22:23,963 basehttp "GET /quiz_field/19/ HTTP/1.1" 200 44507
+INFO 2025-02-10 12:22:25,294 basehttp "GET /quiz_field/19/ HTTP/1.1" 200 44507
+INFO 2025-02-10 12:22:27,339 basehttp "GET /quiz_field/19/ HTTP/1.1" 200 44507
+INFO 2025-02-10 12:22:29,406 basehttp "GET /quiz_field/19/ HTTP/1.1" 200 44507
+INFO 2025-02-10 12:22:30,630 basehttp "GET /quiz_field/19/ HTTP/1.1" 200 44507
+INFO 2025-02-10 12:22:38,751 basehttp "GET /quiz_field/19/ HTTP/1.1" 200 44218
+INFO 2025-02-10 12:22:40,059 basehttp "GET / HTTP/1.1" 200 24731
+INFO 2025-02-10 12:22:41,716 basehttp "GET /quizzes/ HTTP/1.1" 200 15763
+INFO 2025-02-10 12:22:45,923 basehttp "GET /contests/19/ HTTP/1.1" 200 37435
+INFO 2025-02-10 12:22:47,435 basehttp "GET /quiz_field/19/ HTTP/1.1" 200 44218
+INFO 2025-02-10 12:23:11,957 basehttp "GET /quiz_field/19/ HTTP/1.1" 200 44708
+INFO 2025-02-10 12:23:13,271 basehttp "GET /quiz_field/19/ HTTP/1.1" 200 44708
+INFO 2025-02-10 12:23:14,359 basehttp "GET /blank_page/ HTTP/1.1" 200 7223
+INFO 2025-02-10 12:23:14,841 basehttp "GET /blank_page/ HTTP/1.1" 200 7223
+INFO 2025-02-10 12:23:15,371 basehttp "GET /blank_page/ HTTP/1.1" 200 7223
+INFO 2025-02-10 12:23:15,691 basehttp "GET /blank_page/ HTTP/1.1" 200 7223
+INFO 2025-02-10 12:23:15,752 basehttp "GET /blank_page/ HTTP/1.1" 200 7223
+INFO 2025-02-10 12:23:32,189 basehttp "GET /blank_page/ HTTP/1.1" 200 6638
+INFO 2025-02-10 12:23:32,892 basehttp "GET /blank_page/ HTTP/1.1" 200 6638
+INFO 2025-02-10 12:23:33,577 basehttp "GET /quizzes/ HTTP/1.1" 200 15668
+INFO 2025-02-10 12:23:34,689 basehttp "GET /contests/19/ HTTP/1.1" 200 37340
+ERROR 2025-02-10 12:23:36,177 log Internal Server Error: /quiz_field/19/
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 75, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 123, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py", line 263, in quiz_field_view
+    return render(request, 'quiz_templates/quiz_field.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 563, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 49: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-02-10 12:23:36,180 basehttp "GET /quiz_field/19/ HTTP/1.1" 500 280427
+INFO 2025-02-10 12:23:44,195 basehttp "GET /quiz_field/19/ HTTP/1.1" 200 44323
+INFO 2025-02-10 12:24:10,522 basehttp "GET /quiz_field/19/ HTTP/1.1" 200 44506
+INFO 2025-02-10 12:24:11,368 basehttp "GET / HTTP/1.1" 200 24827
+INFO 2025-02-10 12:24:12,719 basehttp "GET /quizzes/ HTTP/1.1" 200 15859
+INFO 2025-02-10 12:24:14,799 basehttp "GET / HTTP/1.1" 200 24827
+INFO 2025-02-10 12:24:53,397 basehttp "GET / HTTP/1.1" 200 24827
+INFO 2025-02-10 12:24:54,074 basehttp "GET /blank_page/ HTTP/1.1" 200 7047
+INFO 2025-02-10 12:24:55,427 basehttp "GET /blank_page/ HTTP/1.1" 200 7047
+INFO 2025-02-10 12:24:58,264 basehttp "GET /blank_page/ HTTP/1.1" 200 7047
+INFO 2025-02-10 12:24:59,044 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-10 12:24:59,821 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-10 12:25:03,342 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-10 12:25:03,856 basehttp "GET /contests/ HTTP/1.1" 200 17454
+INFO 2025-02-10 12:25:04,503 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-10 12:25:04,847 basehttp "GET / HTTP/1.1" 200 24827
+INFO 2025-02-10 12:25:07,872 basehttp "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-02-10 12:25:07,918 basehttp "GET / HTTP/1.1" 200 21502
+INFO 2025-02-10 12:25:08,824 basehttp "GET /blank_page/ HTTP/1.1" 200 6911
+INFO 2025-02-10 12:25:13,766 basehttp "GET /quizzes/ HTTP/1.1" 200 11704
+INFO 2025-02-10 12:25:30,869 basehttp "GET /quizzes/ HTTP/1.1" 200 11704
+INFO 2025-02-10 12:25:31,818 basehttp "GET /login/ HTTP/1.1" 200 8151
+INFO 2025-02-10 12:26:04,252 basehttp "GET /quizzes/ HTTP/1.1" 200 11704
+INFO 2025-02-10 12:26:05,282 basehttp "GET /login/ HTTP/1.1" 200 8151
+INFO 2025-02-10 12:26:07,505 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-02-10 12:26:07,557 basehttp "GET / HTTP/1.1" 200 24827
+INFO 2025-02-10 12:26:08,723 basehttp "GET /quizzes/ HTTP/1.1" 200 15859
+INFO 2025-02-10 12:26:10,305 basehttp "GET /contests/19/ HTTP/1.1" 200 37531
+INFO 2025-02-10 12:26:10,341 basehttp "GET /media/uploads/7b0716e9-b692-4514-897f-b0cb9f8a922b.gif HTTP/1.1" 200 1785399
+INFO 2025-02-10 12:26:13,529 basehttp "GET /quiz_results/19/ HTTP/1.1" 200 17649
+INFO 2025-02-10 12:26:14,938 basehttp "GET /quiz_realtime_log/19 HTTP/1.1" 200 15969
+INFO 2025-02-10 12:26:15,381 basehttp "GET /api/get_quiz_last_attempts/?contest_id=19 HTTP/1.1" 200 67622
+INFO 2025-02-10 12:26:20,417 basehttp "GET /api/get_quiz_last_attempts/?contest_id=19 HTTP/1.1" 200 67622
+INFO 2025-02-10 12:26:25,401 basehttp "GET /api/get_quiz_last_attempts/?contest_id=19 HTTP/1.1" 200 67622
+INFO 2025-02-10 12:26:30,414 basehttp "GET /api/get_quiz_last_attempts/?contest_id=19 HTTP/1.1" 200 67622
+INFO 2025-02-10 12:26:35,401 basehttp "GET /api/get_quiz_last_attempts/?contest_id=19 HTTP/1.1" 200 67622
+INFO 2025-02-10 12:26:40,385 basehttp "GET /api/get_quiz_last_attempts/?contest_id=19 HTTP/1.1" 200 67622
+INFO 2025-02-10 12:26:45,008 basehttp "GET /quiz_realtime_results/19 HTTP/1.1" 200 9876
+INFO 2025-02-10 12:26:45,118 basehttp "GET /api/get_quiz_current_results/?contest_id=19 HTTP/1.1" 200 522
+INFO 2025-02-10 12:26:55,168 basehttp "GET /contests/19/ HTTP/1.1" 200 37531
+INFO 2025-02-10 12:26:56,218 basehttp "GET /quiz_realtime_results/19 HTTP/1.1" 200 10093
+INFO 2025-02-10 12:26:56,301 basehttp "GET /api/get_quiz_current_results/?contest_id=19 HTTP/1.1" 200 522
+INFO 2025-02-10 12:27:01,302 basehttp "GET /api/get_quiz_current_results/?contest_id=19 HTTP/1.1" 200 522
+INFO 2025-02-10 12:27:06,313 basehttp "GET /api/get_quiz_current_results/?contest_id=19 HTTP/1.1" 200 522
+INFO 2025-02-10 12:27:11,314 basehttp "GET /api/get_quiz_current_results/?contest_id=19 HTTP/1.1" 200 522
+INFO 2025-02-10 12:27:29,038 basehttp "GET /quiz_results/19/ HTTP/1.1" 200 17866
+INFO 2025-02-10 12:27:52,895 basehttp "GET /quiz_results/19/ HTTP/1.1" 200 17151
+INFO 2025-02-10 12:28:02,911 basehttp "GET /quiz_results/19/ HTTP/1.1" 200 17037
+INFO 2025-02-10 12:28:03,658 basehttp "GET /quiz_results/19/ HTTP/1.1" 200 17037
+INFO 2025-02-10 12:28:19,960 basehttp "GET /quiz_results/19/ HTTP/1.1" 200 17037
+INFO 2025-02-10 12:28:22,364 basehttp "GET /quiz_results/19/ HTTP/1.1" 200 16319
+INFO 2025-02-10 12:28:44,770 basehttp "GET /quiz_results/19/ HTTP/1.1" 200 15492
+INFO 2025-02-10 12:28:59,215 basehttp "GET /contests/19/ HTTP/1.1" 200 37531
+INFO 2025-02-10 12:29:06,914 basehttp "GET /contests/19/ HTTP/1.1" 200 37531
+INFO 2025-02-10 12:29:07,881 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-10 12:29:30,168 basehttp "GET /quizzes/ HTTP/1.1" 200 16180
+INFO 2025-02-10 12:29:54,233 basehttp "GET /quizzes/ HTTP/1.1" 200 16180
+INFO 2025-02-10 12:29:54,927 basehttp "GET /quizzes/ HTTP/1.1" 200 16252
+INFO 2025-02-10 12:29:59,319 basehttp "GET /quizzes/ HTTP/1.1" 200 16252
+INFO 2025-02-10 12:29:59,832 basehttp "GET /quizzes/ HTTP/1.1" 200 16180
+INFO 2025-02-10 12:30:03,663 basehttp "GET / HTTP/1.1" 200 24827
+INFO 2025-02-10 12:30:05,532 basehttp "GET /quizzes/ HTTP/1.1" 200 16180
+INFO 2025-02-10 12:30:24,601 basehttp "GET /quizzes/ HTTP/1.1" 200 16180
+INFO 2025-02-10 12:30:24,976 basehttp "GET /quizzes/ HTTP/1.1" 200 16252
+INFO 2025-02-10 12:30:33,858 basehttp "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-02-10 12:30:33,904 basehttp "GET / HTTP/1.1" 200 21502
+INFO 2025-02-10 12:30:34,934 basehttp "GET /quizzes/ HTTP/1.1" 200 12097
+INFO 2025-02-10 12:30:44,395 basehttp "GET /blank_page/ HTTP/1.1" 200 6911
+INFO 2025-02-10 12:30:45,378 basehttp "GET /contests/ HTTP/1.1" 200 13081
+INFO 2025-02-10 12:30:46,330 basehttp "GET /blank_page/ HTTP/1.1" 200 6911
+INFO 2025-02-10 12:30:46,892 basehttp "GET / HTTP/1.1" 200 21502
+INFO 2025-02-10 12:30:48,103 basehttp "GET /blank_page/ HTTP/1.1" 200 6911
+INFO 2025-02-10 12:30:49,421 basehttp "GET /contests/ HTTP/1.1" 200 13081
+INFO 2025-02-10 12:30:50,364 basehttp "GET / HTTP/1.1" 200 21502
+INFO 2025-02-10 12:30:51,522 basehttp "GET /blank_page/ HTTP/1.1" 200 6911
+INFO 2025-02-10 12:30:52,344 basehttp "GET /contests/ HTTP/1.1" 200 13081
+INFO 2025-02-10 12:30:52,824 basehttp "GET /blank_page/ HTTP/1.1" 200 6911
+INFO 2025-02-10 12:30:53,524 basehttp "GET /quizzes/ HTTP/1.1" 200 12097
+INFO 2025-02-10 12:30:57,223 basehttp "GET /login/ HTTP/1.1" 200 8151
+INFO 2025-02-10 12:30:57,971 basehttp "GET /register/ HTTP/1.1" 200 6690
+INFO 2025-02-10 12:30:59,893 basehttp "GET /login/ HTTP/1.1" 200 8151
+INFO 2025-02-10 12:31:01,774 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-02-10 12:31:01,824 basehttp "GET / HTTP/1.1" 200 24827
+INFO 2025-02-10 12:31:33,719 basehttp "GET / HTTP/1.1" 200 24529
+INFO 2025-02-10 12:31:34,929 basehttp "GET / HTTP/1.1" 200 24529
+INFO 2025-02-10 12:31:53,325 basehttp "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-02-10 12:31:53,483 basehttp "GET / HTTP/1.1" 200 21204
+INFO 2025-02-10 12:32:25,591 basehttp "GET / HTTP/1.1" 200 21294
+INFO 2025-02-10 12:32:26,187 basehttp "GET / HTTP/1.1" 200 21294
+INFO 2025-02-10 12:32:26,782 basehttp "GET / HTTP/1.1" 200 21294
+INFO 2025-02-10 12:32:27,262 basehttp "GET / HTTP/1.1" 200 21294
+INFO 2025-02-10 12:32:27,331 basehttp "GET / HTTP/1.1" 200 21294
+INFO 2025-02-10 12:32:27,473 basehttp "GET / HTTP/1.1" 200 21294
+INFO 2025-02-10 12:32:28,940 basehttp "GET / HTTP/1.1" 200 21294
+INFO 2025-02-10 12:32:30,427 basehttp "GET / HTTP/1.1" 200 21294
+INFO 2025-02-10 12:32:45,004 basehttp "GET / HTTP/1.1" 200 21294
+INFO 2025-02-10 12:32:49,906 basehttp "GET / HTTP/1.1" 200 21294
+INFO 2025-02-10 12:32:50,518 basehttp "GET /blank_page/ HTTP/1.1" 200 6911
+INFO 2025-02-10 12:32:52,183 basehttp "GET /blank_page/ HTTP/1.1" 200 6911
+INFO 2025-02-10 12:32:52,830 basehttp "GET /quizzes/ HTTP/1.1" 200 12097
+INFO 2025-02-10 12:32:53,233 basehttp "GET /blank_page/ HTTP/1.1" 200 6911
+INFO 2025-02-10 12:32:56,142 basehttp "GET /quizzes/ HTTP/1.1" 200 12097
+INFO 2025-02-10 12:32:58,122 basehttp "GET /quizzes/ HTTP/1.1" 200 12097
+INFO 2025-02-10 12:33:00,376 basehttp "GET /login/ HTTP/1.1" 200 8151
+INFO 2025-02-10 12:33:02,758 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-02-10 12:33:02,809 basehttp "GET / HTTP/1.1" 200 24619
+INFO 2025-02-10 12:33:23,552 basehttp "GET / HTTP/1.1" 200 24619
+INFO 2025-02-10 12:33:24,095 basehttp "GET / HTTP/1.1" 200 24749
+INFO 2025-02-10 12:33:45,020 basehttp "GET / HTTP/1.1" 200 24824
+INFO 2025-02-10 12:33:45,789 basehttp "GET / HTTP/1.1" 200 24824
+INFO 2025-02-10 12:33:58,916 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-10 12:33:59,555 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-10 12:34:01,218 basehttp "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-02-10 12:34:01,264 basehttp "GET / HTTP/1.1" 200 21514
+INFO 2025-02-10 12:34:33,665 basehttp "GET /register/ HTTP/1.1" 200 6907
+INFO 2025-02-10 12:34:38,807 basehttp "GET /blank_page/ HTTP/1.1" 200 6911
+INFO 2025-02-10 12:34:40,838 basehttp "GET /register/ HTTP/1.1" 200 6907
+INFO 2025-02-10 12:34:42,802 basehttp "GET /blank_page/ HTTP/1.1" 200 6911
+INFO 2025-02-10 12:34:44,101 basehttp "GET /register/ HTTP/1.1" 200 6907
+INFO 2025-02-10 12:34:45,047 basehttp "GET /quizzes/ HTTP/1.1" 200 12097
+INFO 2025-02-10 12:34:49,702 basehttp "GET /login/ HTTP/1.1" 200 8151
+INFO 2025-02-10 12:34:51,841 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-02-10 12:34:51,892 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-10 12:34:53,244 basehttp "GET /quizzes/ HTTP/1.1" 200 16252
+INFO 2025-02-10 12:34:54,035 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-10 12:34:54,744 basehttp "GET /contests/ HTTP/1.1" 200 17454
+INFO 2025-02-10 12:34:56,752 basehttp "GET /admin_panel/ HTTP/1.1" 200 7964
+INFO 2025-02-10 12:34:57,750 basehttp "GET /quizzes/ HTTP/1.1" 200 16252
+INFO 2025-02-10 12:34:59,318 basehttp "GET /contests/19/ HTTP/1.1" 200 37531
+INFO 2025-02-10 12:35:01,424 basehttp "GET /quiz_field/19/ HTTP/1.1" 200 44506
+INFO 2025-02-10 12:35:33,536 basehttp "GET /contests/19/ HTTP/1.1" 200 37748
+INFO 2025-02-10 12:35:34,919 basehttp "GET /contests/19/ HTTP/1.1" 200 37748
+INFO 2025-02-10 12:35:39,680 basehttp "GET /contests/ HTTP/1.1" 200 17671
+INFO 2025-02-10 12:35:42,186 basehttp "GET /quizzes/ HTTP/1.1" 200 16252
+INFO 2025-02-10 12:35:43,173 basehttp "GET /contests/ HTTP/1.1" 200 17671
+INFO 2025-02-10 12:35:46,928 basehttp "GET /quizzes/ HTTP/1.1" 200 16252
+INFO 2025-02-10 12:36:01,267 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-10 12:36:03,877 basehttp "GET /contests/ HTTP/1.1" 200 17671
+INFO 2025-02-10 12:36:07,121 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-10 12:36:08,804 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-10 12:36:15,932 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-10 12:36:16,767 basehttp "GET /contests/ HTTP/1.1" 200 17671
+INFO 2025-02-10 12:36:17,955 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-10 12:36:19,152 basehttp "GET /contests/ HTTP/1.1" 200 17671
+INFO 2025-02-10 12:36:19,826 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-10 12:36:30,129 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-10 12:36:51,336 basehttp "GET /contests/19/ HTTP/1.1" 200 37748
+INFO 2025-02-10 12:37:41,114 basehttp "GET /contests/19/ HTTP/1.1" 200 37775
+INFO 2025-02-10 12:37:42,127 basehttp "GET /contests/19/ HTTP/1.1" 200 37775
+INFO 2025-02-10 12:38:15,820 basehttp "GET /contests/19/ HTTP/1.1" 200 37770
+INFO 2025-02-10 12:38:19,624 basehttp "GET /contests/19/ HTTP/1.1" 200 37773
+INFO 2025-02-10 12:38:52,893 basehttp "GET /contests/19/ HTTP/1.1" 200 37903
+INFO 2025-02-10 12:38:53,562 basehttp "GET /contests/19/ HTTP/1.1" 200 37903
+INFO 2025-02-10 12:39:00,839 basehttp "GET /contests/19/ HTTP/1.1" 200 37773
+INFO 2025-02-10 12:39:24,032 basehttp "GET /contests/19/ HTTP/1.1" 200 37903
+INFO 2025-02-10 12:39:39,604 basehttp "GET /contests/19/ HTTP/1.1" 200 37993
+INFO 2025-02-10 12:39:44,288 basehttp "GET /contests/19/ HTTP/1.1" 200 37993
+INFO 2025-02-10 12:39:51,918 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-10 12:40:04,217 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-10 12:40:04,960 basehttp "GET /contests/ HTTP/1.1" 200 17671
+INFO 2025-02-10 12:40:05,473 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-10 12:40:05,945 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-10 12:40:07,676 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-10 12:40:08,286 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-10 12:40:08,781 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-10 12:40:11,862 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-10 12:40:13,533 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-10 12:40:14,431 basehttp "GET /contests/ HTTP/1.1" 200 17671
+INFO 2025-02-10 12:40:15,160 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-10 12:40:15,583 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-10 12:40:20,616 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-10 12:40:21,978 basehttp "GET /contests/19/ HTTP/1.1" 200 37993
+INFO 2025-02-10 12:40:38,830 basehttp "GET /contests/19/ HTTP/1.1" 200 37993
+INFO 2025-02-10 12:40:39,348 basehttp "GET /contests/19/ HTTP/1.1" 200 38083
+INFO 2025-02-10 12:40:39,915 basehttp - Broken pipe from ('127.0.0.1', 54026)
+INFO 2025-02-10 12:40:39,938 basehttp "GET /contests/19/ HTTP/1.1" 200 38083
+INFO 2025-02-10 12:40:43,879 basehttp "GET /contests/19/ HTTP/1.1" 200 38083
+INFO 2025-02-10 12:40:44,797 basehttp "GET /contests/19/ HTTP/1.1" 200 38083
+INFO 2025-02-10 12:40:45,258 basehttp "GET /contests/19/ HTTP/1.1" 200 38083
+INFO 2025-02-10 12:40:45,427 basehttp "GET /contests/19/ HTTP/1.1" 200 38083
+INFO 2025-02-10 12:40:56,349 basehttp "GET /contests/19/ HTTP/1.1" 200 38138
+INFO 2025-02-10 12:40:56,982 basehttp "GET /contests/19/ HTTP/1.1" 200 38138
+INFO 2025-02-10 12:41:22,865 basehttp "GET /contests/19/ HTTP/1.1" 200 38088
+INFO 2025-02-10 12:41:23,525 basehttp - Broken pipe from ('127.0.0.1', 54905)
+INFO 2025-02-10 12:41:23,540 basehttp "GET /contests/19/ HTTP/1.1" 200 38088
+INFO 2025-02-10 12:41:23,681 basehttp "GET /contests/19/ HTTP/1.1" 200 38088
+INFO 2025-02-10 12:41:26,078 basehttp "GET /contests/19/ HTTP/1.1" 200 38093
+INFO 2025-02-10 12:41:26,831 basehttp "GET /contests/19/ HTTP/1.1" 200 38093
+INFO 2025-02-10 12:42:42,932 basehttp "GET /contests/19/ HTTP/1.1" 200 38057
+INFO 2025-02-10 12:42:47,080 basehttp "GET /contests/19/ HTTP/1.1" 200 38056
+INFO 2025-02-10 12:42:50,152 basehttp "GET /contests/19/ HTTP/1.1" 200 38056
+INFO 2025-02-10 12:43:13,094 basehttp "GET /contests/19/ HTTP/1.1" 200 38054
+INFO 2025-02-10 12:43:44,336 basehttp "GET /quiz_results/19/ HTTP/1.1" 200 15492
+INFO 2025-02-10 12:43:46,366 basehttp "GET /contests/19/ HTTP/1.1" 200 38054
+INFO 2025-02-10 12:43:46,998 basehttp "GET /quiz_realtime_log/19 HTTP/1.1" 200 15969
+INFO 2025-02-10 12:43:47,437 basehttp "GET /api/get_quiz_last_attempts/?contest_id=19 HTTP/1.1" 200 67622
+INFO 2025-02-10 12:43:48,823 basehttp "GET /quiz_field/19/ HTTP/1.1" 200 44506
+INFO 2025-02-10 12:44:01,631 basehttp "GET /contests/19/ HTTP/1.1" 200 38054
+INFO 2025-02-10 12:44:03,485 basehttp "GET /quiz_realtime_log/19 HTTP/1.1" 200 15969
+INFO 2025-02-10 12:44:03,934 basehttp "GET /api/get_quiz_last_attempts/?contest_id=19 HTTP/1.1" 200 67622
+INFO 2025-02-10 12:44:06,069 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-10 12:44:06,873 basehttp "GET /admin_panel/ HTTP/1.1" 200 7964
+INFO 2025-02-10 12:44:07,902 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-10 12:44:09,105 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-10 12:44:12,311 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-10 12:44:12,828 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-10 12:44:17,496 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-10 12:44:33,923 basehttp "GET /contests/19/ HTTP/1.1" 200 38054
+INFO 2025-02-10 12:44:35,548 basehttp "GET /quiz_field/19/ HTTP/1.1" 200 44506
+INFO 2025-02-10 12:44:39,846 basehttp "GET /buy_quiz_problem/78/ HTTP/1.1" 200 48797
+INFO 2025-02-10 12:44:41,551 basehttp "GET /buy_quiz_problem/78/ HTTP/1.1" 200 48797
+INFO 2025-02-10 12:44:43,849 basehttp "GET /buy_quiz_problem/78/ HTTP/1.1" 200 48797
+INFO 2025-02-10 12:44:53,961 basehttp "GET /buy_quiz_problem/78/ HTTP/1.1" 200 48797
+INFO 2025-02-10 12:45:02,782 basehttp "GET /buy_quiz_problem/78/ HTTP/1.1" 200 48797
+INFO 2025-02-10 12:45:32,935 basehttp "GET /buy_quiz_problem/78/ HTTP/1.1" 200 48797
+INFO 2025-02-10 12:45:49,210 basehttp "GET /buy_quiz_problem/78/ HTTP/1.1" 200 48829
+INFO 2025-02-10 12:45:50,536 basehttp "GET /buy_quiz_problem/78/ HTTP/1.1" 200 48829
+INFO 2025-02-10 12:45:54,207 basehttp "GET /buy_quiz_problem/78/ HTTP/1.1" 200 48829
+INFO 2025-02-10 12:45:55,526 basehttp "GET /buy_quiz_problem/78/ HTTP/1.1" 200 48829
+INFO 2025-02-10 12:46:24,319 basehttp "GET /buy_quiz_problem/78/ HTTP/1.1" 200 48895
+INFO 2025-02-10 12:46:32,279 basehttp "GET /buy_quiz_problem/78/ HTTP/1.1" 200 48958
+INFO 2025-02-10 12:46:33,851 basehttp "GET /buy_quiz_problem/78/ HTTP/1.1" 200 48958
+INFO 2025-02-10 12:46:35,235 basehttp "GET /buy_quiz_problem/78/ HTTP/1.1" 200 48958
+INFO 2025-02-10 12:46:38,716 basehttp "GET /buy_quiz_problem/78/ HTTP/1.1" 200 48958
+INFO 2025-02-10 12:46:49,428 basehttp "GET /buy_quiz_problem/78/ HTTP/1.1" 200 48958
+INFO 2025-02-10 12:47:44,061 autoreload D:\django_proj\ml-jam\core\myapp\quiz_logic_service\message_box.py changed, reloading.
+INFO 2025-02-10 12:47:44,700 autoreload Watching for file changes with StatReloader
+INFO 2025-02-10 12:47:46,698 basehttp "GET /buy_quiz_problem/78/ HTTP/1.1" 200 48960
+INFO 2025-02-10 12:47:55,187 basehttp "GET /buy_quiz_problem/78/ HTTP/1.1" 200 48960
+INFO 2025-02-10 12:48:07,057 autoreload D:\django_proj\ml-jam\core\myapp\quiz_logic_service\message_box.py changed, reloading.
+INFO 2025-02-10 12:48:07,685 autoreload Watching for file changes with StatReloader
+INFO 2025-02-10 12:48:09,788 basehttp "GET /buy_quiz_problem/78/ HTTP/1.1" 200 48958
+INFO 2025-02-10 12:48:11,368 basehttp "GET /buy_quiz_problem/78/ HTTP/1.1" 200 48958
+INFO 2025-02-10 12:48:14,242 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-10 12:48:17,324 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-10 12:48:17,826 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-24 13:07:08,774 autoreload Watching for file changes with StatReloader
+INFO 2025-02-24 13:07:39,280 autoreload D:\django_proj\ml-jam\core\config\settings.py changed, reloading.
+INFO 2025-02-24 13:07:39,968 autoreload Watching for file changes with StatReloader
+INFO 2025-02-24 13:07:42,719 basehttp "GET / HTTP/1.1" 200 21514
+INFO 2025-02-24 13:07:42,796 basehttp "GET /media/uploads/4dfd7bba-645f-445f-b471-3c1bd5c95130.png HTTP/1.1" 200 4197
+INFO 2025-02-24 13:07:42,805 basehttp "GET /media/uploads/12f36cfa-60c7-4aa6-8411-b4ed9faeb9a5.jpg HTTP/1.1" 200 109478
+INFO 2025-02-24 13:07:42,824 basehttp "GET /media/uploads/64a1078e-1c67-4a5f-ba7b-46d5aa755d0e.gif HTTP/1.1" 200 1278458
+INFO 2025-02-24 13:07:42,939 basehttp "GET /media/uploads/de80c6a5-c455-439e-bfad-6688529c508b.gif HTTP/1.1" 200 13467382
+WARNING 2025-02-24 13:07:45,207 log Not Found: /favicon.ico
+WARNING 2025-02-24 13:07:45,207 basehttp "GET /favicon.ico HTTP/1.1" 404 12491
+INFO 2025-02-24 13:07:56,039 basehttp "GET /quizzes/ HTTP/1.1" 200 11921
+INFO 2025-02-24 13:08:00,049 basehttp "GET /blank_page/ HTTP/1.1" 200 6911
+INFO 2025-02-24 13:08:00,855 basehttp "GET /contests/ HTTP/1.1" 200 13298
+INFO 2025-02-24 13:08:01,578 basehttp "GET /blank_page/ HTTP/1.1" 200 6911
+INFO 2025-02-24 13:08:02,109 basehttp "GET / HTTP/1.1" 200 21514
+INFO 2025-02-24 13:08:02,677 basehttp "GET / HTTP/1.1" 200 21514
+INFO 2025-02-24 13:08:03,595 basehttp "GET / HTTP/1.1" 200 21514
+INFO 2025-02-24 13:08:03,991 basehttp "GET / HTTP/1.1" 200 21514
+INFO 2025-02-24 13:08:04,799 basehttp "GET / HTTP/1.1" 200 21514
+INFO 2025-02-24 13:08:05,524 basehttp "GET / HTTP/1.1" 200 21514
+INFO 2025-02-24 13:08:06,134 basehttp "GET / HTTP/1.1" 200 21514
+INFO 2025-02-24 13:08:07,066 basehttp "GET /blank_page/ HTTP/1.1" 200 6911
+INFO 2025-02-24 13:08:07,646 basehttp "GET /contests/ HTTP/1.1" 200 13298
+INFO 2025-02-24 13:08:08,128 basehttp "GET /blank_page/ HTTP/1.1" 200 6911
+INFO 2025-02-24 13:08:08,614 basehttp "GET /quizzes/ HTTP/1.1" 200 11921
+INFO 2025-02-24 13:08:09,190 basehttp "GET /blank_page/ HTTP/1.1" 200 6911
+INFO 2025-02-24 13:08:09,723 basehttp "GET /contests/ HTTP/1.1" 200 13298
+INFO 2025-02-24 13:08:10,761 basehttp "GET / HTTP/1.1" 200 21514
+INFO 2025-02-24 13:08:11,693 basehttp "GET / HTTP/1.1" 200 21514
+INFO 2025-02-24 13:08:48,221 basehttp "GET /contests/ HTTP/1.1" 200 13298
+INFO 2025-02-24 13:08:48,983 basehttp "GET /blank_page/ HTTP/1.1" 200 6911
+INFO 2025-02-24 13:08:49,578 basehttp "GET /contests/ HTTP/1.1" 200 13298
+INFO 2025-02-24 13:08:51,652 basehttp "GET /blank_page/ HTTP/1.1" 200 6911
+INFO 2025-02-24 13:08:52,070 basehttp "GET / HTTP/1.1" 200 21514
+INFO 2025-02-24 13:08:52,483 basehttp "GET /blank_page/ HTTP/1.1" 200 6911
+INFO 2025-02-24 13:08:52,949 basehttp "GET /quizzes/ HTTP/1.1" 200 11921
+INFO 2025-02-24 13:08:54,162 basehttp "GET /login/ HTTP/1.1" 200 8151
+INFO 2025-02-24 13:08:57,518 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-02-24 13:08:57,810 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-24 13:08:59,341 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-24 13:08:59,964 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-24 13:09:01,134 basehttp "GET /admin_panel/ HTTP/1.1" 200 7964
+INFO 2025-02-24 13:09:01,629 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-24 13:09:05,288 basehttp "GET /contests/18/ HTTP/1.1" 200 19375
+INFO 2025-02-24 13:09:07,397 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 49421
+INFO 2025-02-24 13:09:19,805 basehttp "GET /contests/18/ HTTP/1.1" 200 19375
+INFO 2025-02-24 13:09:21,394 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 49421
+INFO 2025-02-24 13:09:25,148 basehttp "GET /edit_quiz_problem/53/ HTTP/1.1" 200 8894
+INFO 2025-02-24 13:09:28,432 basehttp "GET /quiz_field/18/ HTTP/1.1" 200 49421
+INFO 2025-02-26 11:15:14,826 autoreload Watching for file changes with StatReloader
+INFO 2025-02-26 11:15:44,990 basehttp "GET / HTTP/1.1" 200 21514
+INFO 2025-02-26 11:15:44,990 basehttp - Broken pipe from ('127.0.0.1', 55313)
+INFO 2025-02-26 11:15:45,172 basehttp "GET /media/uploads/4dfd7bba-645f-445f-b471-3c1bd5c95130.png HTTP/1.1" 200 4197
+INFO 2025-02-26 11:15:45,176 basehttp "GET /media/uploads/12f36cfa-60c7-4aa6-8411-b4ed9faeb9a5.jpg HTTP/1.1" 200 109478
+INFO 2025-02-26 11:15:45,209 basehttp "GET /media/uploads/64a1078e-1c67-4a5f-ba7b-46d5aa755d0e.gif HTTP/1.1" 200 1278458
+INFO 2025-02-26 11:15:45,276 basehttp "GET /media/uploads/de80c6a5-c455-439e-bfad-6688529c508b.gif HTTP/1.1" 200 13467382
+WARNING 2025-02-26 11:15:46,334 log Not Found: /favicon.ico
+WARNING 2025-02-26 11:15:46,334 basehttp "GET /favicon.ico HTTP/1.1" 404 12491
+INFO 2025-02-26 11:15:55,729 basehttp "GET /login/ HTTP/1.1" 200 8151
+INFO 2025-02-26 11:15:59,827 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-02-26 11:15:59,882 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-26 11:16:04,639 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-26 11:16:05,497 basehttp "GET /admin_panel/ HTTP/1.1" 200 7964
+INFO 2025-02-26 11:16:07,931 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-26 11:16:08,897 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-26 11:16:09,669 basehttp "GET /admin_panel/ HTTP/1.1" 200 7964
+INFO 2025-02-26 11:16:11,081 basehttp "GET /image_list/ HTTP/1.1" 200 9623
+INFO 2025-02-26 11:16:11,552 basehttp "GET /media/uploads/9aacc595-9c84-42ae-bc1e-b11944bbabdb.png HTTP/1.1" 200 4340
+INFO 2025-02-26 11:16:11,555 basehttp "GET /media/uploads/4f5ab0db-4cbc-4fde-b468-746233b7faef.png HTTP/1.1" 200 4340
+INFO 2025-02-26 11:16:11,555 basehttp "GET /media/uploads/e3da408e-b1fd-4cdf-a1fb-f06f05dd5678.png HTTP/1.1" 200 6908
+INFO 2025-02-26 11:16:11,556 basehttp "GET /media/uploads/fe023179-3f5e-4512-adb6-4ad607cc0479.png HTTP/1.1" 200 4340
+INFO 2025-02-26 11:16:11,558 basehttp "GET /media/uploads/0b019b94-eeb7-4ae8-90d0-0367c81138c2.png HTTP/1.1" 200 12651
+INFO 2025-02-26 11:16:11,569 basehttp "GET /media/uploads/de32f106-4654-409b-8b61-41a53107ca8f.png HTTP/1.1" 200 22217
+INFO 2025-02-26 11:16:11,578 basehttp "GET /media/uploads/d6492889-4b98-4ca8-a963-97a23c67994a.jpg HTTP/1.1" 200 81685
+INFO 2025-02-26 11:16:11,580 basehttp "GET /media/uploads/7b0716e9-b692-4514-897f-b0cb9f8a922b.gif HTTP/1.1" 200 1785399
+INFO 2025-02-26 11:16:11,636 basehttp "GET /media/uploads/bccc04b9-3979-4292-9e52-7657bffd1d0f.gif HTTP/1.1" 200 5900224
+INFO 2025-02-26 11:20:35,543 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-26 11:20:36,364 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-26 11:20:55,574 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-26 11:20:58,831 basehttp "GET /contests/ HTTP/1.1" 200 17671
+INFO 2025-02-26 11:20:59,593 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-26 11:21:08,555 basehttp - Broken pipe from ('127.0.0.1', 55384)
+INFO 2025-02-26 11:21:08,555 basehttp "GET /contests/admin/21/ HTTP/1.1" 200 19309
+INFO 2025-02-26 11:21:08,556 basehttp - Broken pipe from ('127.0.0.1', 55372)
+INFO 2025-02-26 11:21:18,725 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-26 11:21:22,336 basehttp "GET /contests/admin/21/ HTTP/1.1" 200 19309
+INFO 2025-02-26 11:23:04,128 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-26 11:23:05,611 basehttp "GET /contests/21/ HTTP/1.1" 200 19110
+INFO 2025-02-26 11:23:07,499 basehttp "GET /quiz_field/21/ HTTP/1.1" 200 45554
+ERROR 2025-02-26 11:26:13,671 log Internal Server Error: /quiz_field/21/
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 75, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 123, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py", line 263, in quiz_field_view
+    return render(request, 'quiz_templates/quiz_field.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'quiz_field_editor' not found. 'quiz_field_editor' is not a valid view function or pattern name.
+ERROR 2025-02-26 11:26:13,986 basehttp "GET /quiz_field/21/ HTTP/1.1" 500 236615
+INFO 2025-02-26 11:27:59,451 autoreload D:\django_proj\ml-jam\core\myapp\urls.py changed, reloading.
+INFO 2025-02-26 11:28:00,074 autoreload Watching for file changes with StatReloader
+INFO 2025-02-26 11:38:57,677 autoreload D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py changed, reloading.
+INFO 2025-02-26 11:38:58,456 autoreload Watching for file changes with StatReloader
+INFO 2025-02-26 11:39:06,827 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-26 11:39:09,494 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+ERROR 2025-02-26 11:39:10,834 log Internal Server Error: /contests/admin/21/
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: ОШИБКА:  столбец myapp_quiz.start_points не существует
+LINE 1: ...ECT "myapp_quiz"."id", "myapp_quiz"."contest_id", "myapp_qui...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\views.py", line 384, in contest_detail_view_admin
+    quiz = Quiz.objects.filter(contest=contest).first()  # Получаем первый найденный Quiz или None
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\query.py", line 1097, in first
+    for obj in queryset[:1]:
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: ОШИБКА:  столбец myapp_quiz.start_points не существует
+LINE 1: ...ECT "myapp_quiz"."id", "myapp_quiz"."contest_id", "myapp_qui...
+                                                             ^
+
+ERROR 2025-02-26 11:39:11,040 basehttp "GET /contests/admin/21/ HTTP/1.1" 500 137212
+INFO 2025-02-26 11:40:25,378 autoreload Watching for file changes with StatReloader
+INFO 2025-02-26 11:40:27,834 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-26 11:40:29,504 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-26 11:40:31,103 basehttp "GET /contests/21/ HTTP/1.1" 200 19110
+ERROR 2025-02-26 11:40:33,090 log Internal Server Error: /quiz_field/21/
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 75, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 123, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py", line 263, in quiz_field_view
+    return render(request, 'quiz_templates/quiz_field.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'quiz_field_editor' with arguments '('',)' not found. 1 pattern(s) tried: ['quiz_field/edit/(?P<quiz_field_id>[0-9]+)/\\Z']
+ERROR 2025-02-26 11:40:33,094 basehttp "GET /quiz_field/21/ HTTP/1.1" 500 239744
+ERROR 2025-02-26 11:41:58,489 log Internal Server Error: /quiz_field/21/
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 75, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 123, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py", line 263, in quiz_field_view
+    return render(request, 'quiz_templates/quiz_field.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'quiz_field_editor/edit' not found. 'quiz_field_editor/edit' is not a valid view function or pattern name.
+ERROR 2025-02-26 11:41:58,491 basehttp "GET /quiz_field/21/ HTTP/1.1" 500 236603
+ERROR 2025-02-26 11:47:16,338 log Internal Server Error: /quiz_field/21/
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 75, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 123, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py", line 263, in quiz_field_view
+    return render(request, 'quiz_templates/quiz_field.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'quiz_field_editor' with arguments '('',)' not found. 1 pattern(s) tried: ['quiz_field/edit/(?P<quiz_field_id>[0-9]+)/\\Z']
+ERROR 2025-02-26 11:47:16,340 basehttp "GET /quiz_field/21/ HTTP/1.1" 500 239744
+INFO 2025-02-26 11:48:17,756 autoreload D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py changed, reloading.
+INFO 2025-02-26 11:48:18,380 autoreload Watching for file changes with StatReloader
+INFO 2025-02-26 11:48:22,475 basehttp "GET /quiz_field/21/ HTTP/1.1" 200 44887
+INFO 2025-02-26 11:48:24,080 basehttp "GET /quiz_field/edit/6/ HTTP/1.1" 200 7824
+INFO 2025-02-26 11:48:51,667 autoreload D:\django_proj\ml-jam\core\myapp\models.py changed, reloading.
+INFO 2025-02-26 11:48:52,268 autoreload Watching for file changes with StatReloader
+INFO 2025-02-26 11:53:55,062 autoreload Watching for file changes with StatReloader
+INFO 2025-02-26 11:54:12,701 autoreload D:\django_proj\ml-jam\core\myapp\forms.py changed, reloading.
+INFO 2025-02-26 11:54:13,207 autoreload Watching for file changes with StatReloader
+INFO 2025-02-26 11:54:32,219 basehttp "GET /quiz_field/edit/6/ HTTP/1.1" 200 8348
+INFO 2025-02-26 11:54:33,836 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-26 11:54:33,888 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-26 11:54:41,845 basehttp "POST /quiz_field/edit/6/ HTTP/1.1" 302 0
+INFO 2025-02-26 11:54:41,897 basehttp "GET /quiz_field/edit/6/ HTTP/1.1" 200 8348
+ERROR 2025-02-26 11:54:43,632 log Internal Server Error: /quiz_field/21/
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 75, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 123, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py", line 208, in quiz_field_view
+    pt = quiz_problem.points
+         ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'points'
+ERROR 2025-02-26 11:54:43,634 basehttp "GET /quiz_field/21/ HTTP/1.1" 500 93856
+INFO 2025-02-26 12:00:37,299 autoreload D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py changed, reloading.
+INFO 2025-02-26 12:00:39,165 autoreload Watching for file changes with StatReloader
+INFO 2025-02-26 12:00:43,858 basehttp "POST /quiz_field/edit/6/ HTTP/1.1" 302 0
+INFO 2025-02-26 12:00:43,921 basehttp "GET /quiz_field/edit/6/ HTTP/1.1" 200 8348
+ERROR 2025-02-26 12:00:45,105 log Internal Server Error: /quiz_field/21/
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 75, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 123, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py", line 188, in quiz_field_view
+    if not quiz_field_cells.exists():
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'exists'
+ERROR 2025-02-26 12:00:45,107 basehttp "GET /quiz_field/21/ HTTP/1.1" 500 91173
+INFO 2025-02-26 12:01:12,201 autoreload D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py changed, reloading.
+INFO 2025-02-26 12:01:12,901 autoreload Watching for file changes with StatReloader
+ERROR 2025-02-26 12:01:16,875 log Internal Server Error: /quiz_field/21/
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 75, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 123, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py", line 212, in quiz_field_view
+    quiz_problem = QuizProblem.objects.filter(quizFieldCell=cell).first()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1555, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1385, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\fields\related_lookups.py", line 158, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\lookups.py", line 365, in get_prep_lookup
+    raise ValueError(
+ValueError: The QuerySet value for an exact lookup must be limited to one result using slicing.
+ERROR 2025-02-26 12:01:16,880 basehttp "GET /quiz_field/21/ HTTP/1.1" 500 151152
+INFO 2025-02-26 12:01:57,693 autoreload D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py changed, reloading.
+INFO 2025-02-26 12:01:58,279 autoreload Watching for file changes with StatReloader
+INFO 2025-02-26 12:04:54,251 autoreload D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py changed, reloading.
+INFO 2025-02-26 12:04:54,808 autoreload Watching for file changes with StatReloader
+ERROR 2025-02-26 12:04:58,960 log Internal Server Error: /quiz_field/21/
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 75, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 123, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py", line 196, in quiz_field_view
+    quiz_problem = QuizProblem.objects.filter(quizFieldCell=cell).first()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1555, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1385, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\fields\related_lookups.py", line 158, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\lookups.py", line 365, in get_prep_lookup
+    raise ValueError(
+ValueError: The QuerySet value for an exact lookup must be limited to one result using slicing.
+ERROR 2025-02-26 12:04:58,963 basehttp "GET /quiz_field/21/ HTTP/1.1" 500 151152
+INFO 2025-02-26 12:08:31,389 autoreload D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py changed, reloading.
+INFO 2025-02-26 12:08:32,188 autoreload Watching for file changes with StatReloader
+INFO 2025-02-26 12:08:39,276 autoreload D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py changed, reloading.
+INFO 2025-02-26 12:08:39,871 autoreload Watching for file changes with StatReloader
+ERROR 2025-02-26 12:08:41,200 log Internal Server Error: /quiz_field/21/
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 75, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 123, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py", line 174, in quiz_field_view
+    if not quiz_field_cell.exists():
+           ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QuizFieldCell' object has no attribute 'exists'
+ERROR 2025-02-26 12:08:41,203 basehttp "GET /quiz_field/21/ HTTP/1.1" 500 89645
+INFO 2025-02-26 12:08:53,434 autoreload D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py changed, reloading.
+INFO 2025-02-26 12:08:54,009 autoreload Watching for file changes with StatReloader
+INFO 2025-02-26 12:09:04,436 basehttp "GET /quiz_field/21/ HTTP/1.1" 200 49584
+INFO 2025-02-26 12:09:08,740 basehttp "GET /edit_quiz_problem/112/ HTTP/1.1" 200 8881
+INFO 2025-02-26 12:09:14,747 basehttp "POST /edit_quiz_problem/112/ HTTP/1.1" 200 8887
+INFO 2025-02-26 12:09:16,581 basehttp "GET /quiz_field/21/ HTTP/1.1" 200 49587
+INFO 2025-02-26 12:09:18,566 basehttp "GET /quiz_field/edit/6/ HTTP/1.1" 200 8348
+INFO 2025-02-26 12:09:20,999 basehttp "POST /quiz_field/edit/6/ HTTP/1.1" 302 0
+INFO 2025-02-26 12:09:21,047 basehttp "GET /quiz_field/edit/6/ HTTP/1.1" 200 8348
+INFO 2025-02-26 12:09:23,502 basehttp "POST /quiz_field/edit/6/ HTTP/1.1" 302 0
+INFO 2025-02-26 12:09:23,558 basehttp "GET /quiz_field/edit/6/ HTTP/1.1" 200 8348
+INFO 2025-02-26 12:09:24,419 basehttp "GET /quiz_field/21/ HTTP/1.1" 200 37444
+INFO 2025-02-26 12:09:27,150 basehttp "GET /quiz_field/edit/6/ HTTP/1.1" 200 8348
+INFO 2025-02-26 12:09:29,681 basehttp "POST /quiz_field/edit/6/ HTTP/1.1" 302 0
+INFO 2025-02-26 12:09:29,731 basehttp "GET /quiz_field/edit/6/ HTTP/1.1" 200 8348
+INFO 2025-02-26 12:09:33,398 basehttp "GET /quiz_field/21/ HTTP/1.1" 200 59780
+INFO 2025-02-26 12:10:56,257 basehttp "GET /contests/21/ HTTP/1.1" 200 19110
+INFO 2025-02-26 12:15:34,849 basehttp "GET /quiz_field/21/ HTTP/1.1" 200 59780
+INFO 2025-02-27 21:41:53,124 autoreload Watching for file changes with StatReloader
+INFO 2025-02-27 21:42:05,782 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-27 21:42:06,009 basehttp "GET /media/uploads/4dfd7bba-645f-445f-b471-3c1bd5c95130.png HTTP/1.1" 200 4197
+INFO 2025-02-27 21:42:06,011 basehttp "GET /media/uploads/12f36cfa-60c7-4aa6-8411-b4ed9faeb9a5.jpg HTTP/1.1" 200 109478
+INFO 2025-02-27 21:42:06,086 basehttp "GET /media/uploads/64a1078e-1c67-4a5f-ba7b-46d5aa755d0e.gif HTTP/1.1" 200 1278458
+INFO 2025-02-27 21:42:06,155 basehttp "GET /media/uploads/de80c6a5-c455-439e-bfad-6688529c508b.gif HTTP/1.1" 200 13467382
+WARNING 2025-02-27 21:42:07,417 log Not Found: /favicon.ico
+WARNING 2025-02-27 21:42:07,418 basehttp "GET /favicon.ico HTTP/1.1" 404 12792
+INFO 2025-02-27 21:42:08,560 basehttp "GET /contests/ HTTP/1.1" 200 17671
+INFO 2025-02-27 21:42:09,375 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-27 21:42:10,346 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-27 21:42:11,400 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-27 21:42:11,659 basehttp "GET /contests/ HTTP/1.1" 200 17671
+INFO 2025-02-27 21:42:12,193 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-27 21:42:12,792 basehttp "GET /contests/ HTTP/1.1" 200 17671
+INFO 2025-02-27 21:42:13,616 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-27 21:42:14,270 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-27 21:42:14,781 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-27 21:42:15,244 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-27 21:42:15,928 basehttp "GET /admin_panel/ HTTP/1.1" 200 7964
+INFO 2025-02-27 21:42:16,451 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-27 21:42:16,978 basehttp "GET /admin_panel/ HTTP/1.1" 200 7964
+INFO 2025-02-27 21:42:17,390 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-27 21:42:17,655 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-27 21:42:18,238 basehttp "GET /contests/ HTTP/1.1" 200 17671
+INFO 2025-02-27 21:42:18,632 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-27 21:42:19,044 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-27 21:42:19,671 basehttp "GET /contests/ HTTP/1.1" 200 17671
+INFO 2025-02-27 21:42:20,191 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-27 21:42:20,541 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-27 21:42:20,936 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-27 21:42:21,641 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-27 21:42:22,047 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-27 21:42:22,292 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-27 21:42:22,626 basehttp "GET /contests/ HTTP/1.1" 200 17671
+INFO 2025-02-27 21:42:22,981 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-27 21:42:23,421 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-27 21:42:23,838 basehttp "GET /admin_panel/ HTTP/1.1" 200 7964
+INFO 2025-02-27 21:42:24,151 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-02-27 21:42:24,749 basehttp "GET /admin_panel/ HTTP/1.1" 200 7964
+INFO 2025-02-27 21:42:25,433 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-27 21:42:25,645 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-27 21:42:26,261 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-27 21:42:26,922 basehttp "GET /contests/21/ HTTP/1.1" 200 19110
+INFO 2025-02-27 21:42:30,140 basehttp "GET /quiz_field/21/ HTTP/1.1" 200 59780
+INFO 2025-02-27 21:42:34,559 basehttp "GET /quiz_field/21/ HTTP/1.1" 200 59780
+INFO 2025-02-27 21:42:49,683 basehttp "POST /quiz_field/21/ HTTP/1.1" 302 0
+INFO 2025-02-27 21:42:51,719 basehttp "GET /quiz_field/21/ HTTP/1.1" 200 59852
+INFO 2025-02-27 22:06:44,558 autoreload Watching for file changes with StatReloader
+INFO 2025-02-27 22:07:00,316 autoreload D:\django_proj\ml-jam\core\config\settings.py changed, reloading.
+INFO 2025-02-27 22:07:00,871 autoreload Watching for file changes with StatReloader
+INFO 2025-02-27 22:07:03,250 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-27 22:07:04,510 basehttp "GET /quizzes/ HTTP/1.1" 200 16076
+INFO 2025-02-27 22:07:06,113 basehttp "POST /quizzes/ HTTP/1.1" 200 16516
+INFO 2025-02-27 22:07:16,824 basehttp "POST /quizzes/ HTTP/1.1" 302 0
+INFO 2025-02-27 22:07:16,883 basehttp "GET /quizzes/ HTTP/1.1" 200 16968
+INFO 2025-02-27 22:07:18,069 basehttp "GET /contests/25/ HTTP/1.1" 200 16325
+WARNING 2025-02-27 22:07:18,861 log Not Found: /quiz_field/25/
+WARNING 2025-02-27 22:07:18,861 basehttp "GET /quiz_field/25/ HTTP/1.1" 404 6298
+WARNING 2025-02-27 22:10:05,318 log Not Found: /quiz_field/25/
+WARNING 2025-02-27 22:10:05,318 basehttp "GET /quiz_field/25/ HTTP/1.1" 404 6298
+INFO 2025-02-27 22:10:07,286 basehttp "GET /quizzes/ HTTP/1.1" 200 16968
+INFO 2025-02-27 22:10:08,013 basehttp "GET /contests/25/ HTTP/1.1" 200 16325
+WARNING 2025-02-27 22:10:08,912 log Not Found: /quiz_field/25/
+WARNING 2025-02-27 22:10:08,912 basehttp "GET /quiz_field/25/ HTTP/1.1" 404 6298
+INFO 2025-02-27 22:12:23,988 autoreload Watching for file changes with StatReloader
+WARNING 2025-02-27 22:12:27,264 log Not Found: /quiz_field/25/
+WARNING 2025-02-27 22:12:27,265 basehttp "GET /quiz_field/25/ HTTP/1.1" 404 6298
+INFO 2025-02-27 22:16:30,762 autoreload D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py changed, reloading.
+INFO 2025-02-27 22:16:31,419 autoreload Watching for file changes with StatReloader
+INFO 2025-02-27 22:16:50,306 autoreload D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py changed, reloading.
+INFO 2025-02-27 22:16:50,915 autoreload Watching for file changes with StatReloader
+INFO 2025-02-27 22:18:11,286 autoreload D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py changed, reloading.
+INFO 2025-02-27 22:18:11,854 autoreload Watching for file changes with StatReloader
+INFO 2025-02-27 22:18:14,579 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-27 22:18:16,432 basehttp "GET /quizzes/ HTTP/1.1" 200 16968
+INFO 2025-02-27 22:18:17,230 basehttp "GET /contests/25/ HTTP/1.1" 200 16325
+ERROR 2025-02-27 22:18:18,091 log Internal Server Error: /quiz_field/25/
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\query.py", line 948, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+myapp.models.QuizField.DoesNotExist: QuizField matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: ОШИБКА:  значение NULL в столбце "quiz_id" отношения "myapp_quizfield" нарушает ограничение NOT NULL
+DETAIL:  Ошибочная строка содержит (7, 5, 4, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 75, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 123, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py", line 164, in quiz_field_view
+    quiz_field, is_just_created = QuizField.objects.get_or_create(quiz__contest=contest)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\query.py", line 955, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: ОШИБКА:  значение NULL в столбце "quiz_id" отношения "myapp_quizfield" нарушает ограничение NOT NULL
+DETAIL:  Ошибочная строка содержит (7, 5, 4, null).
+
+ERROR 2025-02-27 22:18:18,096 basehttp "GET /quiz_field/25/ HTTP/1.1" 500 182957
+INFO 2025-02-27 22:20:23,997 autoreload D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py changed, reloading.
+INFO 2025-02-27 22:20:44,020 autoreload Watching for file changes with StatReloader
+INFO 2025-02-27 22:20:45,867 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-27 22:20:47,465 basehttp "GET /quizzes/ HTTP/1.1" 200 16968
+INFO 2025-02-27 22:20:48,147 basehttp "GET /contests/25/ HTTP/1.1" 200 16325
+ERROR 2025-02-27 22:20:48,835 log Internal Server Error: /quiz_field/25/
+Traceback (most recent call last):
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 75, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\policies.py", line 123, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py", line 164, in quiz_field_view
+    quiz_field, is_just_created = QuizField.objects.get_or_create(quiz_=quiz)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\query.py", line 948, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\query.py", line 635, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1491, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1303, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django_proj\ml-jam\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1768, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'quiz_' into field. Choices are: cells, height, id, quiz, quiz_id, width
+ERROR 2025-02-27 22:20:48,839 basehttp "GET /quiz_field/25/ HTTP/1.1" 500 141766
+INFO 2025-02-27 22:20:56,472 autoreload D:\django_proj\ml-jam\core\myapp\quiz_logic_service\quiz_logic.py changed, reloading.
+INFO 2025-02-27 22:20:57,110 autoreload Watching for file changes with StatReloader
+INFO 2025-02-27 22:20:59,012 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-02-27 22:21:00,543 basehttp "GET /quizzes/ HTTP/1.1" 200 16968
+INFO 2025-02-27 22:21:01,688 basehttp "GET /contests/25/ HTTP/1.1" 200 16325
+INFO 2025-02-27 22:21:03,105 basehttp "GET /quiz_field/25/ HTTP/1.1" 200 40729
+INFO 2025-02-27 22:21:15,952 basehttp "GET /quiz_field/edit/8/ HTTP/1.1" 200 8348
+INFO 2025-02-27 22:21:18,340 basehttp "POST /quiz_field/edit/8/ HTTP/1.1" 302 0
+INFO 2025-02-27 22:21:18,391 basehttp "GET /quiz_field/edit/8/ HTTP/1.1" 200 8348
+INFO 2025-02-27 22:21:20,980 basehttp "GET /quiz_field/25/ HTTP/1.1" 200 45426
+INFO 2025-02-27 22:21:24,024 basehttp "GET /quiz_field/25/ HTTP/1.1" 200 45426
+INFO 2025-03-01 11:54:51,100 autoreload Watching for file changes with StatReloader
+INFO 2025-03-01 11:55:12,575 autoreload Watching for file changes with StatReloader
+INFO 2025-03-01 11:55:25,716 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-03-01 11:55:26,319 basehttp "GET /media/uploads/4dfd7bba-645f-445f-b471-3c1bd5c95130.png HTTP/1.1" 200 4197
+INFO 2025-03-01 11:55:26,323 basehttp "GET /media/uploads/12f36cfa-60c7-4aa6-8411-b4ed9faeb9a5.jpg HTTP/1.1" 200 109478
+INFO 2025-03-01 11:55:26,327 basehttp "GET /media/uploads/64a1078e-1c67-4a5f-ba7b-46d5aa755d0e.gif HTTP/1.1" 200 1278458
+INFO 2025-03-01 11:55:27,688 basehttp "GET /media/uploads/de80c6a5-c455-439e-bfad-6688529c508b.gif HTTP/1.1" 200 13467382
+WARNING 2025-03-01 11:55:28,418 log Not Found: /favicon.ico
+WARNING 2025-03-01 11:55:28,418 basehttp "GET /favicon.ico HTTP/1.1" 404 12792
+INFO 2025-03-01 11:55:28,656 basehttp "GET /quizzes/ HTTP/1.1" 200 16968
+INFO 2025-03-01 11:55:30,807 basehttp "GET /contests/25/ HTTP/1.1" 200 16325
+INFO 2025-03-01 11:55:33,121 basehttp "GET /quiz_field/25/ HTTP/1.1" 200 45426
+INFO 2025-03-01 11:56:56,333 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-03-01 11:56:58,950 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-03-01 11:57:00,620 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-03-01 11:57:04,859 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-03-01 11:57:05,401 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-03-01 11:57:05,981 basehttp "GET /contests/ HTTP/1.1" 200 17671
+INFO 2025-03-01 11:57:08,337 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-03-01 11:57:11,458 basehttp "GET /contests/ HTTP/1.1" 200 17671
+INFO 2025-03-01 11:57:13,886 basehttp "GET /blank_page/ HTTP/1.1" 200 7046
+INFO 2025-03-01 11:57:15,431 basehttp "GET /quizzes/ HTTP/1.1" 200 16968
+INFO 2025-03-01 11:57:18,631 basehttp "GET /contests/ HTTP/1.1" 200 17671
+INFO 2025-03-01 11:57:20,169 basehttp "GET /contests/9/ HTTP/1.1" 200 19824
+INFO 2025-03-01 11:57:21,803 basehttp "GET /contests/1/ HTTP/1.1" 200 28725
+INFO 2025-03-01 11:57:59,458 basehttp "GET /contests/submissions/1/ HTTP/1.1" 200 26061
+INFO 2025-03-01 11:58:25,353 basehttp "GET /contests/1/ HTTP/1.1" 200 28725
+INFO 2025-03-01 11:58:26,239 basehttp "GET /contests/results/1/ HTTP/1.1" 200 16683
+INFO 2025-03-01 11:58:30,232 basehttp "GET /contests/1/ HTTP/1.1" 200 28725
+INFO 2025-03-01 11:58:31,143 basehttp "GET / HTTP/1.1" 200 24839
+INFO 2025-03-01 11:58:31,622 basehttp "GET / HTTP/1.1" 200 24839

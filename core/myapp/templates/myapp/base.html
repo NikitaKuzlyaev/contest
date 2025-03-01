@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}ML Contest System{% endblock %}</title>
@@ -17,6 +19,16 @@
     <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
+
+        html, body {
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+
+        button, input, textarea, select {
+            font-family: inherit;
+        }
+
         body {
             display: flex;
             flex-direction: column;
@@ -77,7 +89,6 @@
 </head>
 <body>
 
-{% load static %}
 <!-- Хэдер с навигацией -->
 <nav class="navbar navbar-expand-sm">
     <div class="container-sm">

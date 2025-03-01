@@ -83,7 +83,6 @@ class Contest(models.Model):
 
 class Quiz(models.Model):
     contest = models.ForeignKey(Contest, on_delete=models.CASCADE)  # Внешний ключ к соревнованию
-    pass
 
 
 class QuizUser(models.Model):

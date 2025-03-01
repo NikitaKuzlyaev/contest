@@ -18,7 +18,7 @@ from ..models import (
     User, Contest, Quiz, QuizUser, QuizField, QuizFieldCell, QuizProblem, QuizAttempt, Profile, ContestTag
 )
 from ..forms import (
-    ContestForm, QuizProblemForm, ContestUserProfileForm, SinglePasswordChangeForm
+    ContestForm, QuizProblemForm, ContestUserProfileForm, SinglePasswordChangeForm, QuizFieldForm
 )
 from ..policies import Policies
 from .. import utils
@@ -153,9 +153,25 @@ def quiz_field_view(request, contest_id):
     """
     clear_messages(request)
     contest = get_object_or_404(Contest, pk=contest_id)
-    quiz_field = get_object_or_404(QuizField, quiz__contest=contest)
-    quiz = get_object_or_404(Quiz, contest=contest)
-    quiz_user, _ = QuizUser.objects.get_or_create(quiz=quiz, user=request.user)
+
+    # Получаем или создаем Quiz
+    quiz, is_just_created = Quiz.objects.get_or_create(contest=contest)
+    # if is_just_created:
+    #     quiz.contest = contest
+    #     quiz.save()
+
+    # Получаем или создаем QuizField
+    quiz_field, is_just_created = QuizField.objects.get_or_create(quiz=quiz)
+    # if is_just_created:
+    #     quiz_field.quiz = quiz
+    #     quiz_field.save()
+
+    # Получаем или создаем QuizUser
+    quiz_user, is_just_created = QuizUser.objects.get_or_create(quiz=quiz, user=request.user)
+    # if is_just_created:
+    #     quiz_user.quiz = quiz
+    #     quiz_user.user = request.user
+    #     quiz_user.save()
 
     if request.method == 'POST':
         if 'check_answer' in request.POST:
@@ -164,22 +180,25 @@ def quiz_field_view(request, contest_id):
         return redirect('quiz_field', contest_id=contest.id)
 
     width, height = quiz_field.width, quiz_field.height
-    quiz_field_cells = QuizFieldCell.objects.filter(quizField=quiz_field).select_related('quizField')
 
-    if not quiz_field_cells.exists():
-        # Если ячейки еще не созданы – создаем их пакетно
-        cells = [
-            QuizFieldCell(
-                quizField=quiz_field,
-                row=row,
-                col=col,
-                title=f"Cell {row}-{col}",
-                cell_type='normal'
-            )
-            for row in range(height) for col in range(width)
-        ]
-        QuizFieldCell.objects.bulk_create(cells)
-        quiz_field_cells = QuizFieldCell.objects.filter(quizField=quiz_field)
+    quiz_field_cells = []
+
+    for row in range(height):
+        for col in range(width):
+            quiz_field_cell = QuizFieldCell.objects.filter(quizField=quiz_field, row=row, col=col).select_related('quizField').first()
+
+            if not quiz_field_cell:
+                quiz_field_cell = QuizFieldCell(
+                    quizField=quiz_field,
+                    row=row,
+                    col=col,
+                    title=f"Cell {row}-{col}",
+                    cell_type='normal'
+                )
+                quiz_field_cell.save()
+                quiz_field_cell = QuizFieldCell.objects.filter(quizField=quiz_field, row=row, col=col).select_related('quizField').first()
+
+            quiz_field_cells.append(quiz_field_cell)
 
     # Инициализация сетки задач, флагов и возможности покупки
     task_field = [[None for _ in range(width)] for _ in range(height)]
@@ -249,6 +268,7 @@ def quiz_field_view(request, contest_id):
         'task_field': task_field,  # Двумерный массив с задачами
         'tasks_ids': tasks_ids,
         'problems': problems_to_show,
+        'quiz_field': quiz_field,
         'contest': contest,
         'make_redirect': make_redirect,
         'current_server_time_utc7': current_server_time_utc7,
@@ -289,6 +309,33 @@ def edit_quiz_problem(request, quiz_problem_id):
         form = QuizProblemForm(instance=quiz_problem)
     context['form'] = form
     return render(request, 'quiz_templates/edit_quiz_problem.html', context=context)
+
+
+@user_passes_test(lambda u: u.is_staff)
+def quiz_field_editor(request, quiz_field_id):
+    """
+        Отображает форму редактирования игрового поля.
+    """
+
+    quiz_field = get_object_or_404(QuizField, id=quiz_field_id)
+    quiz = quiz_field.quiz
+    contest = get_object_or_404(Contest, quiz=quiz)
+
+    context = {'quiz_field': quiz_field,
+               'quiz': quiz,
+               'contest': contest,
+               }
+
+    if request.method == "POST":
+        form = QuizFieldForm(request.POST, instance=quiz_field)
+        if form.is_valid():
+            form.save()
+            return redirect('quiz_field_editor', quiz_field_id=quiz_field.id)  # Или другой редирект
+    else:
+        form = QuizFieldForm(instance=quiz_field)
+
+    context['form'] = form
+    return render(request, 'quiz_templates/quiz_field_editor.html', context=context)
 
 
 @Policies.contest_user_access_politic(redirect_path='/quizzes/')

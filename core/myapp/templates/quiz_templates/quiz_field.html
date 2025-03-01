@@ -3,263 +3,250 @@
 {% block title %}Квиз{% endblock %}
 
 {% block content %}
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Квиз</title>
-
-    <!-- Подключение Font Awesome через CDN -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <!-- Добавляем ссылку на Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Подключение Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Подключение Font Awesome через CDN -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <!-- Добавляем ссылку на Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Подключение Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Конфигурация MathJax -->
-    <script type="text/javascript">
-        MathJax = {
-            tex: {
-                packages: {'[+]': ['textmacros']}, // Подключаем дополнительные пакеты
-            },
-            options: {
-                enableHTML: true, // Включаем поддержку HTML
-            }
-        };
-    </script>
-
-    <script>
-        MathJax = {
-          tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']]
-          },
-          svg: {
-            fontCache: 'global'
-          }
-        };
-    </script>
-    <script type="text/javascript" id="MathJax-script" async
-            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
-    </script>
 
 
-    <style>
-        /* Уменьшаем шрифт для таблицы */
-        .table {
-            font-size: 0.8rem; /* Уменьшаем размер шрифта для всей таблицы */
-            --bs-table-color: #00000000; /* Цвет фона таблицы */
+<meta charset="UTF-8">
+<title>Квиз</title>
+
+<!-- Добавляем ссылку на Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<!-- Подключение Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Подключение Font Awesome через CDN -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<!-- Конфигурация MathJax -->
+<script type="text/javascript">
+    MathJax = {
+        tex: {
+            packages: {'[+]': ['textmacros']}, // Подключаем дополнительные пакеты
+        },
+        options: {
+            enableHTML: true, // Включаем поддержку HTML
         }
-        .table, .table th, .table td .table tr{
-            border: none;
-        }
+    };
+</script>
 
-        /* Цвет кнопок */
-        .btn-full {
-            width: 92%;
-            height: 92%;
-            padding: 0;
-            text-align: center;
-            border: none; /* Убираем бордеры кнопки */
-            font-size: 0.75rem; /* Уменьшаем размер шрифта кнопок */
-            background-color: #ffecd6; /* Устанавливаем цвет фона кнопки */
-            color: #000; /* Цвет текста кнопки (если нужно) */
-        }
-
-        .btn-full:hover {
-            background-color: #ffd4a3; /* Цвет кнопки при наведении */
-        }
-
-        /* Устанавливаем фиксированную высоту для ячеек */
-        .table td {
-            height: 50px; /* Можно изменить на нужную высоту */
-            vertical-align: middle; /* Центрируем кнопку по вертикали */
-            padding: 0; /* Убираем внутренние отступы у ячеек */
-             border: none;
-        }
-        .admin-edit-form {
-            display: none;
-        }
-
-        /* Стили для модального окна */
-        .modal-content {
-            background-color: #fff;
-        }
+<script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
 
 
-        /* Уменьшаем время анимации для модальных окон */
-        .modal.fade .modal-dialog {
-            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Установите желаемую скорость */
-        }
+<style>
 
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
 
-        /* Пример для других элементов */
-        .card {
-            transition: transform 0.2s ease-in-out; /* Установите свою скорость */
-        }
-                .task-card {
-          border: 1px solid #ccc;
-          padding: 16px;
-          margin: 10px;
-          width: 50%;
-          border-radius: 8px;
-          background-color: #f9f9f9;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
+    html, body {
+        font-family: 'IBM Plex Sans', sans-serif;
+    }
 
-        .task-card h3 {
-          font-size: 1.0em;
-          color: #333;
-        }
+    /* Цвет кнопок */
+    .btn-full {
+        width: 92%;
+        height: 92%;
+        padding: 0;
+        text-align: center;
+        border: none; /* Убираем бордеры кнопки */
+        font-size: 0.75rem; /* Уменьшаем размер шрифта кнопок */
+        background-color: #ffecd6; /* Устанавливаем цвет фона кнопки */
+        color: #000; /* Цвет текста кнопки (если нужно) */
+    }
 
-        .task-card p {
-          font-size: 0.8em;
-          color: #666;
-        }
+    .btn-full:hover {
+        background-color: #ffd4a3; /* Цвет кнопки при наведении */
+    }
 
-        .task-card a {
-          display: inline-block;
-          padding: 8px 16px;
-          background-color: #f0f8ff;
-          color: white;
-          text-decoration: none;
-          border-radius: 4px;
-        }
+    .admin-edit-form {
+        display: none;
+    }
 
-        .task-card a:hover {
-          background-color: #45a049;
-        }
+    /* Стили для модального окна */
+    .modal-content {
+        background-color: #fff;
+    }
 
-            /* Отключаем эффект выделения кнопки при наведении */
-        .btn-outline-primary:hover {
-            background-color: transparent;
-            border-color: #007bff;
-            opacity: 1;
-        }
+    /* Уменьшаем время анимации для модальных окон */
+    .modal.fade .modal-dialog {
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Установите желаемую скорость */
+    }
 
-    </style>
+    /* Пример для других элементов */
+    .card {
+        transition: transform 0.2s ease-in-out; /* Установите свою скорость */
+    }
 
-    <style>
-        /* Стиль для неудачной попытки */
-.shop-card.failed  {
-background-color: #ff9a81;
+    .task-card {
+        border: 1px solid #ccc;
+        padding: 16px;
+        margin: 10px;
+        width: 50%;
+        border-radius: 4px;
+        background-color: #fdfdfd;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
 
-}
+    .task-card h3 {
+        font-size: 1.1rem;
+        color: #000000;
+    }
 
-/* Стиль для решенной задачи */
-.shop-card.solved {
-background-color: #A8E4A0;
+    .task-card p {
+        font-size: 0.9rem !important;
+        color: #666;
+    }
 
-}
+    .task-card a {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #f0f8ff;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+    }
 
-/* Стиль для задачи, которая в процессе */
-.shop-card.in-progress {
+    .task-card a:hover {
+        background-color: #45a049;
+    }
 
-border: 2px solid #000; /* Черная обводка толщиной 2px */
-}
+    /* Отключаем эффект выделения кнопки при наведении */
+    .btn-outline-primary:hover {
+        background-color: transparent;
+        border-color: #007bff;
+        opacity: 1;
+    }
+</style>
 
-/* Стиль для задачи, которая не была попытана */
-.shop-card.not-attempted {
-background-color: gray;
+<style>
+    /* Стиль для неудачной попытки */
+    .shop-card.failed  {
+        background-color: #ff9a81;
+    }
 
-}
+    /* Стиль для решенной задачи */
+    .shop-card.solved {
+        background-color: #A8E4A0;
+    }
 
-.shop-card {
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.05s;
-    background-color: #f0f8ff;
-}
+    /* Стиль для задачи, которая в процессе */
+    .shop-card.in-progress {
+        border: 2px solid #000; /* Черная обводка толщиной 2px */
+    }
 
-.shop-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-}
+    /* Стиль для задачи, которая не была попытана */
+    .shop-card.not-attempted {
+        background-color: gray;
+    }
 
-.shop-card-body {
-    text-align: center;
-}
+    .shop-card {
+        border-radius: 2px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: transform 0.05s;
+        background-color: #f0f8ff;
+    }
 
-.shop-card-title {
-    margin-top: 8px;
-    font-size: 0.7rem;
-    font-weight: bold;
-}
+    .shop-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
 
-.shop-card-text {
-    font-size: 0.8rem;
-    color: #6c757d;
-}
-.score-card {
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.05s;
-    background-color: #f0f8ff;
-}
+    .shop-card-body {
+        text-align: center;
+    }
 
+    .shop-card-title {
+        margin-top: 8px;
+        font-size: 0.7rem;
+        font-weight: bold;
+    }
 
-    </style>
+    .shop-card-text {
+        font-size: 0.8rem;
+        color: #6c757d;
+    }
 
-    <style>
-        #messageContainer {
-     position: fixed;
-     bottom: 10px;
-     right: 10px;
-     z-index: 1050; /* Поверх других элементов */
-     width: 250px; /* Ограничиваем ширину */
-     display: flex;
-     flex-direction: column-reverse; /* Новые сообщения идут вниз */
-     gap: 5px; /* Расстояние между сообщениями */
- }
+    .score-card {
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: transform 0.05s;
+        background-color: #f0f8ff;
+    }
+</style>
 
-/* Стиль для ошибочного сообщения */
- .alert {
-     opacity: 0.95;
-     margin-bottom: 0px;
-     transition: opacity 0.5s ease-in-out;
-     font-size: 0.75rem;
-     background-color: #ff9a81;
- }
-        /* Стиль для успешного сообщения */
+<style>
+    #messageContainer {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        border-radius: 2px;
+        z-index: 1050; /* Поверх других элементов */
+        width: 250px; /* Ограничиваем ширину */
+        display: flex;
+        flex-direction: column-reverse; /* Новые сообщения идут вниз */
+        gap: 5px; /* Расстояние между сообщениями */
+    }
+
+    /* Стиль для ошибочного сообщения */
+     .alert {
+         opacity: 0.95;
+         margin-bottom: 0px;
+         border-radius: 2px;
+         transition: opacity 0.5s ease-in-out;
+         font-size: 0.75rem;
+         background-color: #ff9a81;
+     }
+
+    /* Стиль для успешного сообщения */
     .alert-success {
         background-color: #A8E4A0;
         opacity: 0.95;
         margin-bottom: 0px;
+        border-radius: 2px;
         transition: opacity 0.5s ease-in-out;
         font-size: 0.75rem;
     }
-         /* Стиль для информационного сообщения */
+
+    /* Стиль для информационного сообщения */
     .alert-info {
         background-color: #f0f8ff;
         opacity: 0.95;
+        border-radius: 2px;
         margin-bottom: 0px;
         transition: opacity 0.5s ease-in-out;
         font-size: 0.75rem;
     }
 
-        .alert-warning {
+    .alert-warning {
         background-color: #f4a460;
         opacity: 0.95;
         margin-bottom: 0px;
+        border-radius: 2px;
         transition: opacity 0.5s ease-in-out;
         font-size: 0.75rem;
     }
+</style>
 
-    </style>
-
-</head>
-<body>
 
 <div class="container mt-1">
 
     <a href="{% url 'contest_detail' contest.id %}" class="btn btn-warning">
         Вернуться назад
     </a>
+
+    {% if user.is_staff %}
+    <a href="{% url 'quiz_field_editor' quiz_field.id %}" class="btn btn-warning">
+        Редактор поля
+    </a>
+    {% endif %}
 
     {% load custom_filters %}
 
@@ -294,7 +281,7 @@ background-color: gray;
                         {% if task %}
                         <div class="shop-card-body">
                             <h5 class="shop-card-title">{{ task.title }}</h5>
-                            <p class="shop-card-text">Очки: {{ task.points }}</p>
+                            <p class="shop-card-text">Очки: {{task.points}}</p>
                         </div>
                         {% else %}
                         <div class="shop-card-body text-center">
@@ -379,7 +366,7 @@ background-color: gray;
         </div>
 
         <p style="white-space: pre-wrap; font-size: 1rem; color: #333;">{{ problem.content|safe }}</p>
-        <p>Потенциально: {{ pt }}</p>
+        <p>Потенциально: {{pt}}</p>
 
         <form method="POST">
             {% csrf_token %}
@@ -430,7 +417,7 @@ background-color: gray;
     <div id="messageContainer">
         {% for message in messages %}
         <div class="alert alert-{{ message.tags }} alert-dismissible fade show shadow-sm" role="alert">
-             {{ message|safe }}
+            {{ message|safe }}
             <!--            <button type="button" class="close" data-dismiss="alert" aria-label="Закрыть">-->
             <!--                <span aria-hidden="true">&times;</span>-->
             <!--            </button>-->
@@ -547,12 +534,7 @@ background-color: gray;
 </script>
 
 <!-- Подключение Bootstrap JS и зависимостей (опционально) -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js">
-</script>
-<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>-->
-
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-</body>
-</html>
 {% endblock %}
