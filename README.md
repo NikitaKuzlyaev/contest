@@ -45,6 +45,16 @@
 
 ---
 
+## 🖼️ Скриншоты
+
+![Image](https://github.com/user-attachments/assets/4973e25e-aa5c-4c72-8e77-e1996c91f708)
+
+![Image](https://github.com/user-attachments/assets/2bca80c3-7954-404a-b3c6-46fce63f15ee)
+
+![Image](https://github.com/user-attachments/assets/abb6146c-dbda-4e20-8f4e-ebc1f6b4cf4c)
+
+---
+
 ## 🔧 Установка и запуск
 
 1. **Клонируйте репозиторий**  
