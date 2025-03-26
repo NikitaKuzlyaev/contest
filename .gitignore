@@ -1,1 +1,12 @@
 /webproject/old_db/
+/core/old_db/
+/.venv/
+/core/logs/
+/core/media/uploads/
+/core/myapp/migrations/
+/core/static/admin/
+/core/venv/
+/core/venv/Lib/
+/core/venv/**
+/core/ee
+/core/ee.pub
